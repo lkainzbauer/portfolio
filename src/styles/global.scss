@@ -1,0 +1,22 @@
+@use './colors' as *;
+@use './fonts' as *;
+
+:global(html) {
+    background-color: $bg;
+    color: $text-clr;
+    font-family: $cont-text;
+}
+
+:global(body) {
+    margin: 0;
+}
+
+:global(h1, h2, h3, h4, h5, h6) {
+    font-family: $heading-text;
+}
+
+:global(button) {
+    border: none;
+    background: none;
+    color: $text-clr;
+}
