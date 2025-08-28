@@ -13,10 +13,35 @@
 
 :global(h1, h2, h3, h4, h5, h6) {
     font-family: $heading-text;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+:global(h1) {
+    font-size: $large-font;
+    color: $bg;
+}
+
+:global(.h1-part-one) {
+    font-weight: 400;
+    font-style: italic;
+    text-transform: capitalize;
 }
 
 :global(button) {
     border: none;
     background: none;
     color: $text-clr;
+}
+
+:global(:root) {
+    --background-size: 50vh;
+}
+
+
+@media (min-width: 640px) {
+  :global(body) {
+    width: 640px;
+  }
 }

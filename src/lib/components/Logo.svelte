@@ -1,11 +1,12 @@
 <script lang="ts">
-	let props = $props();
+    import logoSvg from '$lib/assets/logo.svg?raw';
+	let { color = '#242424'} = $props();
 </script>
 
-<img class="logo" src="/img/logo.svg" alt="logo" {...props}>
+<div class="logo" style="fill: {color}">{@html logoSvg}</div>
 
 <style>
-    .logo {
-        width: 100%;
+    :global(.logo svg) {
+        width: 100%; height: auto;
     }
 </style>

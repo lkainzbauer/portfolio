@@ -2,32 +2,21 @@
     import { RiCloseLine, RiMenuLine, RiLinkedinBoxFill, RiGithubFill, RiAtLine } from 'svelte-remixicon';
 	import Logo from '$lib/components/Logo.svelte';
 
-	let showMenu = $state(false);
+    let { showMenu, toggleMenu, closeMenu } = $props();
 
-	function onclick() {
-		showMenu = !showMenu;
-	}
-
-	// prevent background scroll while menu is open
-	$effect(() => {
-		if (!showMenu) return;
-		const previous = document.body.style.overflow;
-		document.body.style.overflow = 'hidden';
-		return () => { document.body.style.overflow = previous; };
-	});
 </script>
 
 <nav id="mobile-menu" class:menu-active={showMenu}>
 	<div id="menu-bar">
 		<a href="/">
-			<div id="nav-logo">
-				<Logo />
+			<div id="nav-logo" onclick={closeMenu}>
+				<Logo color={showMenu ? '#ffffff' : '#242424'}/>
 			</div>
 		</a>
 
-        <button {onclick}>
+        <button onclick={toggleMenu}>
             {#if showMenu}
-			    <RiCloseLine class="menu-icon" />
+			    <RiCloseLine class="menu-icon menu-active-icon" />
             {:else} 
                 <RiMenuLine class="menu-icon" />
             {/if}
@@ -38,13 +27,13 @@
         <div id="mobile-menu-panel">
             <ul id="menu-points">
                 <li>
-                    <a href="/portfolio">Portfolio</a>
+                    <a href="/portfolio" onclick={closeMenu}>portfolio</a>
                 </li>
                 <li>
-                    <a href="/about-me">About Me</a>
+                    <a href="/about-me" onclick={closeMenu}>about me</a>
                 </li>
                 <li>
-                    <a href="/contact">Contact</a>
+                    <a href="/contact" onclick={closeMenu}>contact me</a>
                 </li>
             </ul>
 
@@ -61,7 +50,6 @@
 	@use '/src/styles/index' as *;
 
     #mobile-menu {
-        background-color: $bg;
         display: flex;
         flex-direction: column;
     }
@@ -74,8 +62,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: .75rem 1.5rem;
-        border-bottom: 1px solid black;
+		padding: 1.5rem 2rem;
 	}
 
 	#nav-logo {
@@ -84,8 +71,13 @@
 	}
 
     :global(.menu-icon) {
-        height: 2.5rem;
-        width: 2.5rem;
+        height: 2rem;
+        width: 2rem;
+        color: $bg;
+    }
+
+    :global(.menu-active-icon) {
+        color: $text-clr;
     }
 
     #mobile-menu-panel {
