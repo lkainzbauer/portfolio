@@ -1,21 +1,28 @@
 <script lang="ts">
     import { RiCloseLine, RiMenuLine, RiLinkedinBoxFill, RiGithubFill, RiAtLine } from 'svelte-remixicon';
 	import Logo from '$lib/components/Logo.svelte';
+    import { nav } from '../../routes/nav.svelte';
 
-    let { showMenu, toggleMenu, closeMenu } = $props();
+    function toggleMenu() {
+		nav.showMenu = !nav.showMenu;
+	}
+
+	function closeMenu() {
+		nav.showMenu = false;
+	}
 
 </script>
 
-<nav id="mobile-menu" class:menu-active={showMenu}>
+<nav id="mobile-menu" class:menu-active={nav.showMenu}>
 	<div id="menu-bar">
 		<a href="/">
-			<div id="nav-logo" onclick={closeMenu}>
-				<Logo color={showMenu ? '#ffffff' : '#242424'}/>
-			</div>
+			<button id="nav-logo" onclick={closeMenu}>
+				<Logo color={nav.showMenu ? '#ffffff' : '#242424'}/>
+            </button>
 		</a>
 
         <button onclick={toggleMenu}>
-            {#if showMenu}
+            {#if nav.showMenu}
 			    <RiCloseLine class="menu-icon menu-active-icon" />
             {:else} 
                 <RiMenuLine class="menu-icon" />
@@ -23,7 +30,7 @@
 		</button>
 	</div>
 
-	{#if showMenu}
+	{#if nav.showMenu}
         <div id="mobile-menu-panel">
             <ul id="menu-points">
                 <li>
@@ -66,7 +73,7 @@
 	}
 
 	#nav-logo {
-		width: 2rem;
+		width: 2.5rem;
 		display: inline-flex;
 	}
 

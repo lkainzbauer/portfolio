@@ -3,23 +3,16 @@
 	import MobileNav from '$lib/components/MobileNav.svelte';
 	import { page } from '$app/state';
 	import Footer from '$lib/components/Footer.svelte';
+	import { nav } from './nav.svelte';
 
 	let { children } = $props();
 
-	let showMenu = $state(false);
 	let path = $state('/');
-
-	function toggleMenu() {
-		showMenu = !showMenu;
-	}
-
-	function closeMenu() {
-		showMenu = false;
-	}
 
 	$effect(() => {
 	path = page.route.id || '';
-    if (!showMenu) return;
+	// disable overflow when menu is opened
+    if (!nav.showMenu) return;
 		const prev = document.body.style.overflow;
 		document.body.style.overflow = 'hidden';
 		return () => { document.body.style.overflow = prev; };
@@ -29,11 +22,11 @@
 
 <div id="app">
 
-	{#if !showMenu}
-	<Background --background-size={path === '/' ? '80vh' : '50vh'} />
+	{#if !nav.showMenu}
+		<Background --background-size={path === '/' ? '80vh' : '50vh'} />
 	{/if}
 
-	<MobileNav {showMenu} {toggleMenu} {closeMenu} />
+	<MobileNav />
 
 	<div id="main-content">
 		{@render children()}

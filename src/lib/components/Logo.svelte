@@ -3,6 +3,8 @@
 	let { color = '#242424'} = $props();
 </script>
 
+
+<!-- add logo svg directly into html to change color -->
 <div class="logo" style="fill: {color}">{@html logoSvg}</div>
 
 <style>

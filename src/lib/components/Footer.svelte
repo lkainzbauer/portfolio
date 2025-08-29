@@ -1,25 +1,17 @@
 <script>
+	import AnimatedLogo from "./AnimatedLogo.svelte";
 	import Logo from "./Logo.svelte";
 
 </script>
 <div id="footer">
     <div id="footer-content">
-          <ul class="footer-points">
-                <li>
-                    <a href="/">impressum</a>
-                </li>
-                <li>
-                    <a href="/">datenschutz</a>
-                </li>
-            </ul>
-            <div id="footer-logo">
-                <Logo color="#3BCEB5" />
+            <a href="/legal">imprint & privacy</a>
+            <div id="info">
+                <div id="footer-logo">
+                    <AnimatedLogo />
+                </div>
             </div>
-            <ul class="footer-points">
-                <li>
-                    <a href="/contact">contact me</a>
-                </li>
-            </ul>
+            <a href="/contact">contact me</a>
     </div>
 </div>
 
@@ -45,27 +37,29 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 3.5rem;
-        width: fit-content;
+        width: 80%;
         background-color: $bg;
         border-radius: 12px;
         padding: 1rem 2rem;
     }
 
-    .footer-points {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-        gap: 1rem;
-        font-size: $small-font;
-        list-style-type: none;
-        padding: 0;
+    #footer-content > * {
+        flex: 1;                 // make each child take equal space
+        text-align: center;      // center text inside each child
+    }
 
-        a {
-            color: $text-clr;
-            text-decoration: none;
-        }
-	}
+    a {
+        color: $text-clr;
+        text-decoration: none;
+        font-size: $small-font;
+    }
+
+    #info {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     #footer-logo {
         width: 2rem;

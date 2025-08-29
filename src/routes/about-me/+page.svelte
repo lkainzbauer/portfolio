@@ -1,1 +1,1 @@
-<h1><span class="h1-part-one">LAURA</span> Kainzbauer</h1>
+<h1><span class="heading-light">LAURA</span> Kainzbauer</h1>
