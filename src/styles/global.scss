@@ -67,7 +67,8 @@
 :global(.container-outline) {
     --padding-size: 1rem;
     --border-thickness: 0.2rem;
-    width: calc(100vw - 4*var(--padding-size));
+    width: 100%;
+    margin-left: -1rem;
     padding: var(--padding-size);
     border-radius: 12px;
     border: var(--border-thickness) solid transparent;
@@ -102,10 +103,6 @@
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
-}
-
-:global(.outline-heading) {
-    margin: 0 1rem;
 }
 
 @media (min-width: 640px) {

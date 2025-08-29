@@ -6,6 +6,7 @@
 	 */
 	let canvas;
 
+	// TODO: try using animated gradient like in border instead
 	$effect(() => {
 		const context = canvas.getContext('2d');
 

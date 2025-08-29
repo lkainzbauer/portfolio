@@ -38,6 +38,7 @@
 		"vite": "^6.2.5"
 	},
 	"dependencies": {
-		"@lucide/svelte": "^0.509.0"
+		"@lucide/svelte": "^0.509.0",
+		"svelte-material-icons": "^3.0.5"
 	}
 }
