@@ -64,6 +64,49 @@
     --background-size: 50vh;
 }
 
+:global(.container-outline) {
+    --padding-size: 1rem;
+    --border-thickness: 0.2rem;
+    width: calc(100vw - 4*var(--padding-size));
+    padding: var(--padding-size);
+    border-radius: 12px;
+    border: var(--border-thickness) solid transparent;
+
+    background: 
+        linear-gradient($bg, $bg) padding-box, // normal background
+        // gradient background
+        linear-gradient(
+            var(--angle),
+            rgba(14, 79, 82, 1) 0%, 
+            rgba(14, 79, 82, 1) 15%, 
+            rgba(21, 95, 92, 1) 26%, 
+            rgba(42, 131, 131, 1) 43%, 
+            rgba(48, 145, 131, 1) 55%, 
+            rgba(74, 146, 115, 1) 74%, 
+            rgba(109, 200, 145, 1) 87%, 
+            rgba(109, 200, 145, 1) 100%
+        ) border-box;
+
+    animation: 8s rotate linear infinite;
+}
+
+// animation to 360deg before starting again
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+// interpolate angle variable for animation
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:global(.outline-heading) {
+    margin: 0 1rem;
+}
 
 @media (min-width: 640px) {
   :global(body) {

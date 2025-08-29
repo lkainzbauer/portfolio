@@ -26,17 +26,17 @@
 
 <style>
     .animated-logo {
-        width: 2rem;
-		height: 3rem;
+        width: 1.5rem;
+		height: 2rem;
     }
 
 	canvas {
-		width: 2rem;
-		height: 3rem;
+		width: 1.5rem;
+		height: 2rem;
 		background-color: #666;
 		mask: url($lib/assets/logo.svg) 50% 50% no-repeat;
-		mask-size: 2rem;
+		mask-size: 1.5rem;
 		-webkit-mask: url($lib/assets/logo.svg) 50% 50% no-repeat;
-		-webkit-mask-size: 2rem;
+		-webkit-mask-size: 1.5rem;
 	}
 </style>

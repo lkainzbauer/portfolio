@@ -7,9 +7,9 @@
     <div id="footer-content">
             <a href="/legal">imprint & privacy</a>
             <div id="info">
-                <div id="footer-logo">
+                <a href="/" id="footer-logo">
                     <AnimatedLogo />
-                </div>
+                </a>
             </div>
             <a href="/contact">contact me</a>
     </div>
@@ -41,7 +41,7 @@
         width: 80%;
         background-color: $bg;
         border-radius: 12px;
-        padding: 1rem 2rem;
+        padding: 1rem 1.5rem;
     }
 
     #footer-content > * {
@@ -63,6 +63,6 @@
     }
 
     #footer-logo {
-        width: 2rem;
+        width: 1.5rem;
     }
 </style>

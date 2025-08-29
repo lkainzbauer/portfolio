@@ -2,11 +2,27 @@
 
 <div id="hero"></div>
 
-<h2 class="heading-underlined"><span class="heading-light">Hi</span> there</h2>
-<p>Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+<div class="about-me-section" id="about-me-intro">
+    <h2 class="heading-underlined"><span class="heading-light">Hi</span> there</h2>
+    <p>Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+</div>
+
+<div class="about-me-section">
+    <h2 class="outline-heading"><span class="heading-light">My</span> skills</h2>
+    <p class="container-outline">Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+</div>
 
 <style lang="scss">
 	@use '/src/styles/index' as *;
+    .about-me-section {
+        margin: 2rem 0;
+    }
+
+    #about-me-intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     #hero {
         background: url("/img/laura-kainzbauer.jpg") center/cover no-repeat #000;

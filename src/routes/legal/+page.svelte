@@ -19,7 +19,7 @@
 	@use '/src/styles/index' as *;
 
     h1 {
-        font-size: 3.1em;
+        font-size: 2.8em;
     }
 
     .legal-section {

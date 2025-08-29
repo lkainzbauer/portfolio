@@ -73,13 +73,13 @@
 	}
 
 	#nav-logo {
-		width: 2.5rem;
+		width: 2rem;
 		display: inline-flex;
 	}
 
     :global(.menu-icon) {
-        height: 2rem;
-        width: 2rem;
+        height: 1.5rem;
+        width: 1.5rem;
         color: $bg;
     }
 

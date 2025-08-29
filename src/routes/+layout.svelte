@@ -42,7 +42,7 @@
 	#app {
 		min-height: 100vh;
 		display: flex;
-  		flex-direction: column; 
+  		flex-direction: column;
 	}
 
 	#main-content {
