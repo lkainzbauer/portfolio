@@ -102,7 +102,7 @@
 		flex-direction: column;
 		align-items: center;
         gap: 2rem;
-        font-size: $med-font;
+        font-size: $m-font;
         list-style-type: none;
         padding: 0;
 
@@ -120,7 +120,7 @@
     :global(.menu-social) {
         height: 2rem;
         width: 2rem;
-        color: $primary;
+        color: $accent2;
     }
 
 </style>

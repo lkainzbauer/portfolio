@@ -40,11 +40,16 @@
 	@use '/src/styles/index' as *;
 
 	#app {
-		position: relative;
-		min-height: 100dvh; 
+		min-height: 100vh;
+		display: flex;
+  		flex-direction: column; 
 	}
 
 	#main-content {
-		margin: 1.5rem 2rem;
+		flex: 1 0 auto;
+		margin: 0 2rem 1.5rem 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 </style>

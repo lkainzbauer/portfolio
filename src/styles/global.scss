@@ -6,6 +6,7 @@
     color: $text-clr;
     font-family: $cont-text;
     min-height: 100%;
+    font-size: $normal-font;
 }
 
 :global(body) {
@@ -21,14 +22,36 @@
 }
 
 :global(h1) {
-    font-size: $large-font;
+    font-size: $xl-font;
     color: $bg;
+    width: 100%;
+}
+
+:global(h2) {
+    font-size: $l-font;
 }
 
 :global(.heading-light) {
     font-weight: 400;
     font-style: italic;
     text-transform: capitalize;
+}
+
+:global(.heading-underlined) {
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    position: relative;
+    
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0.2rem;
+        background-color: $accent2;
+        border-radius: 3px;
+    }
 }
 
 :global(button) {

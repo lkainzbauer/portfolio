@@ -22,7 +22,7 @@
         width: 100%;
         padding-top: 6rem;
         padding-bottom: 1rem;
-        position: absolute;
+        position: static;
         bottom: 0;
         background: url("/img/footer-mobile.svg") no-repeat top center;
         background-size: cover;
@@ -30,6 +30,7 @@
         align-items: center;
         justify-content: center;
         min-height: 12vh;
+        margin-top: auto;
     }
 
     #footer-content {
@@ -51,7 +52,7 @@
     a {
         color: $text-clr;
         text-decoration: none;
-        font-size: $small-font;
+        font-size: $s-font;
     }
 
     #info {
