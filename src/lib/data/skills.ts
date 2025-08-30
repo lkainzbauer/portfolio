@@ -1,40 +1,40 @@
-import { RiNodejsLine, RiVuejsFill, RiAngularjsFill, RiFigmaLine, RiReactjsFill, RiSvelteFill, RiPhpFill } from "svelte-remixicon";
+import type { Skill } from "$lib/types/skill";
 
-export const technologies = [
+export const technologies: Skill[] = [
     {
         name: "Angular",
-        iconType: "remixicon",
-        icon: RiAngularjsFill
+        iconType: "iconify",
+        icon: "mdi:angular"
     },
     {
         name: "Vue",
-        iconType: "remixicon",
-        icon: RiVuejsFill
+        iconType: "iconify",
+        icon: "mdi:vuejs"
     },
     {
         name: "Figma",
-        iconType: "remixicon",
-        icon: RiFigmaLine
+        iconType: "iconify",
+        icon: "solar:figma-linear"
     },
     {
         name: "D3.js",
-        iconType: "svg",
-        icon: 'd3'
+        iconType: "iconify",
+        icon: "file-icons:d3"
     },
     {
         name: "Node.js",
-        iconType: "remixicon",
-        icon: RiNodejsLine
+        iconType: "iconify",
+        icon: "mdi:nodejs"
     },
     {
         name: "React",
-        iconType: "remixicon",
-        icon: RiReactjsFill
+        iconType: "iconify",
+        icon: "mdi:react"
     },
     {
         name: "Svelte",
-        iconType: "remixicon",
-        icon: RiSvelteFill
+        iconType: "iconify",
+        icon: "ri:svelte-fill"
     },
     {
         name: "Scrum",
@@ -48,10 +48,36 @@ export const technologies = [
     },
 ];
 
-export const coding_languages = [
+export const coding_languages: Skill[] = [
+    {
+        name: "Typescript",
+        iconType: "iconify",
+        icon: "lineicons:typescript"
+    },
+    {
+        name: "Javascript",
+        iconType: "iconify",
+        icon: "ri:javascript-fill"
+    },
+    {
+        name: "HTML",
+        iconType: "iconify",
+        icon: "mdi:language-html5"
+    },
+    {
+        name: "CSS",
+        iconType: "iconify",
+        icon: "ri:css3-fill"
+    },
+    {
+        name: "SASS",
+        iconType: "iconify",
+        icon: "mdi:sass"
+    },
     {
         name: "PHP",
-        iconType: "remixicon",
-        icon: RiPhpFill
-    }
+        iconType: "iconify",
+        icon: "mdi:language-php"
+    },
+    
 ];

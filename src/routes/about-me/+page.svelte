@@ -22,16 +22,10 @@
 
 <div class="about-me-section" id="about-me-technologies">
     <h3>Technologies</h3>
-    <div class="listing">
+    <div class="listing technologies">
     {#each technologies as tech, i}
         <div class="list-item">
-            {#if tech.iconType === "remixicon"}
-                <tech.icon style="width: 1.3rem; height: 1.3rem"/>
-            {:else if tech.iconType === "iconify"}
-                <Icon icon={tech.icon} style="width:1.3rem; height:1.3rem"/>
-            {:else if tech.iconType === "svg"}
-                <img src={'/img/icons/' + tech.icon + '.svg'} style="width: 1rem; height: 1rem; padding: 0.2rem" alt="Icon">
-            {/if}
+            <Icon icon={tech.icon} style="width: {tech.icon=="file-icons:d3" ? '1rem' : '1.3rem'}; height:1.3rem"/>
             <span class="list-text">{tech.name}</span>
         </div>
     {/each}
@@ -40,21 +34,20 @@
 
 <div class="about-me-section" id="about-me-coding-languages">
     <h3>Coding Languages</h3>
-    <div class="listing">
+    <div class="listing coding-languages">
     {#each coding_languages as lang, i}
         <div class="list-item">
-            {#if lang.iconType === "component"}
-                <lang.icon style="width: 1.3rem; height: 1.3rem"/>
-            {:else if lang.iconType === "svg"}
-                <img src={'/img/icons/' + lang.icon + '.svg'} style="width: 1rem; height: 1rem; padding: 0.2rem" alt="Icon">
-            {/if}
+            <Icon icon={lang.icon} style="width:1.3rem; height:1.3rem"/>
             <span class="list-text">{lang.name}</span>
         </div>
     {/each}
     </div>
 </div>
 
-<Carousel />
+<div class="about-me-section" id="about-me-experience">
+    <h2 class="outline-heading"><span class="heading-light">My</span> experience</h2>
+    <Carousel />
+</div>
 
 <style lang="scss">
 	@use '/src/styles/index' as *;
@@ -75,15 +68,25 @@
         align-items: flex-end;
     }
 
+    #about-me-experience {
+        margin: 4.5rem 0 2rem 0;
+    }
+
+    .coding-languages {
+        justify-content: flex-end;
+    }
+
+    .technologies {
+        justify-content: flex-start;
+    }
+
     h3 {
         margin: 1rem 0;
-        font-size: $m-font;
     }
 
     .listing {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
         flex-wrap: wrap;
         gap: 0.75rem;
         row-gap: 1rem;

@@ -31,6 +31,11 @@
     font-size: $l-font;
 }
 
+:global(h3) {
+    font-size: $m-font;
+    font-weight: 500;
+}
+
 :global(.heading-light) {
     font-weight: 400;
     font-style: italic;
@@ -67,8 +72,6 @@
 :global(.container-outline) {
     --padding-size: 1rem;
     --border-thickness: 0.2rem;
-    width: 100%;
-    margin-left: -1rem;
     padding: var(--padding-size);
     border-radius: 12px;
     border: var(--border-thickness) solid transparent;

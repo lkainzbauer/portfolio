@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { RiCloseLine, RiMenuLine, RiLinkedinBoxFill, RiGithubFill, RiAtLine } from 'svelte-remixicon';
 	import Logo from '$lib/components/Logo.svelte';
     import { nav } from '../../routes/nav.svelte';
+    import Icon from "@iconify/svelte";
 
     function toggleMenu() {
 		nav.showMenu = !nav.showMenu;
@@ -23,9 +23,9 @@
 
         <button onclick={toggleMenu}>
             {#if nav.showMenu}
-			    <RiCloseLine class="menu-icon menu-active-icon" />
+			    <Icon icon="mdi:close" class="menu-icon menu-active-icon" />
             {:else} 
-                <RiMenuLine class="menu-icon" />
+                <Icon icon="mdi:menu" class="menu-icon" />
             {/if}
 		</button>
 	</div>
@@ -45,9 +45,9 @@
             </ul>
 
             <div id="menu-socials">
-                <RiAtLine class="menu-social" />
-                <RiGithubFill class="menu-social" />
-                <RiLinkedinBoxFill class="menu-social" />
+                <Icon icon="mdi:alternate-email" class="menu-social" />
+                <Icon icon="mdi:github" class="menu-social" />
+                <Icon icon="mdi:linkedin" class="menu-social" />
             </div>
         </div>
 	{/if}
