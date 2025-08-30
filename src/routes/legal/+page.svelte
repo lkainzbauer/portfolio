@@ -1,6 +1,6 @@
 <h1>Legal <span class="heading-light">Notice &</span> Privacy <span class="heading-light">Policy</span></h1>
 
-<div class="legal-section">
+<div class="legal-section" id="legal-notice">
     <h2>Legal Notice</h2>
     <p>Laura Kainzbauer</p>
     <p>Willi-Gruber-Straße 19</p>
@@ -25,6 +25,10 @@
     .legal-section {
         width: 100%;
         margin: 2rem 0;
+    }
+
+    #legal-notice {
+        margin-top: 10rem;
     }
 
 </style>

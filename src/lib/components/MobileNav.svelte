@@ -2,6 +2,7 @@
 	import Logo from '$lib/components/Logo.svelte';
     import { nav } from '../../routes/nav.svelte';
     import Icon from "@iconify/svelte";
+	import Socials from './Socials.svelte';
 
     function toggleMenu() {
 		nav.showMenu = !nav.showMenu;
@@ -44,11 +45,7 @@
                 </li>
             </ul>
 
-            <div id="menu-socials">
-                <Icon icon="mdi:alternate-email" class="menu-social" />
-                <Icon icon="mdi:github" class="menu-social" />
-                <Icon icon="mdi:linkedin" class="menu-social" />
-            </div>
+            <Socials />
         </div>
 	{/if}
 </nav>
@@ -111,16 +108,5 @@
             text-decoration: none;
         }
 	}
-
-    #menu-socials {
-        display: flex;
-        gap: 1.5rem;
-    }
-
-    :global(.menu-social) {
-        height: 2rem;
-        width: 2rem;
-        color: $accent2;
-    }
 
 </style>

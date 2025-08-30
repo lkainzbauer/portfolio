@@ -1,43 +1,24 @@
-<script>
-	import { paint } from "$lib/assets/gradient";
-
-	/**
-	 * @type {HTMLCanvasElement}
-	 */
-	let canvas;
-
-	// TODO: try using animated gradient like in border instead
-	$effect(() => {
-		const context = canvas.getContext('2d');
-
-		let frame = requestAnimationFrame(function loop(t) {
-			frame = requestAnimationFrame(loop);
-			paint(context, t);
-		});
-
-		return () => {
-			cancelAnimationFrame(frame);
-		};
-	});
+<script lang="ts">
+  import logoSvg from '$lib/assets/logo.svg?raw';
 </script>
 
-<div class="animated-logo">
-    <canvas bind:this={canvas} width={32} height={32}></canvas>
+<div class="animated-logo gradient-background" aria-hidden="true">
+  {@html logoSvg}
 </div>
 
 <style>
-    .animated-logo {
-        width: 1.5rem;
-		height: 2rem;
-    }
+  :global(.animated-logo) {
 
-	canvas {
-		width: 1.5rem;
-		height: 2rem;
-		background-color: #666;
-		mask: url($lib/assets/logo.svg) 50% 50% no-repeat;
-		mask-size: 1.5rem;
-		-webkit-mask: url($lib/assets/logo.svg) 50% 50% no-repeat;
-		-webkit-mask-size: 1.5rem;
-	}
+    -webkit-mask: url('/src/lib/assets/logo.svg') no-repeat center;
+    -webkit-mask-size: contain;
+    mask: url('/src/lib/assets/logo.svg') no-repeat center;
+    mask-size: contain;
+
+    width: 1.5rem;
+    height: 2rem;
+  }
+
+  :global(.animated-logo svg) {
+    display: none;
+  }
 </style>

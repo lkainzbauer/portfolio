@@ -1,16 +1,65 @@
-<div id="home-content">
+<div id="home-heading">
   <h1>Welcome</h1>
-  <p>Get to know me and my projects!</p>
+  <p class="greeting">Get to know me and my projects!</p>
+</div>
+
+<div class="home-section container-outline" id="home-intro">
+  <p id="home-intro-text">Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+  <a class="gradient-background main-btn" id="home-intro-btn" href="/about-me">about me</a>
+</div>
+
+<div class="home-section" id="home-project">
+  <img class="home-project-img" src="img/projects/tasmovo.png" alt="Tasmovo">
+  <p>Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+  <a class="gradient-background main-btn home-project-btn" href="/portfolio">take a look</a>
 </div>
 
 <style lang="scss">
 	@use '/src/styles/index' as *;
 
-  #home-content {
+  #home-heading {
     color: $bg;
+    margin-bottom: 6rem;
   }
 
-  p {
-    font-size: 1.4em;
+  #home-intro {
+    position: relative;
+  }
+
+  #home-intro-text {
+    margin: 0;
+  }
+
+  #home-intro-btn {
+    position: absolute;
+    bottom: -1.5rem;
+    right: 1rem;
+  }
+
+  .greeting {
+    font-size: 1.2em;
+  }
+
+  .home-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  #home-project {
+    width: 100%;
+  }
+
+  .home-project-img {
+    width: 100%;
+  }
+
+  .home-project-btn {
+    margin-top: 1rem;
   }
 </style>
