@@ -1,21 +1,19 @@
 import { RiNodejsLine, RiVuejsFill, RiAngularjsFill, RiFigmaLine, RiReactjsFill, RiSvelteFill, RiPhpFill } from "svelte-remixicon";
-import Jira from "svelte-material-icons/Jira.svelte";
-import Git from "svelte-material-icons/Git.svelte";
 
 export const technologies = [
     {
         name: "Angular",
-        iconType: "component",
+        iconType: "remixicon",
         icon: RiAngularjsFill
     },
     {
         name: "Vue",
-        iconType: "component",
+        iconType: "remixicon",
         icon: RiVuejsFill
     },
     {
         name: "Figma",
-        iconType: "component",
+        iconType: "remixicon",
         icon: RiFigmaLine
     },
     {
@@ -25,35 +23,35 @@ export const technologies = [
     },
     {
         name: "Node.js",
-        iconType: "component",
+        iconType: "remixicon",
         icon: RiNodejsLine
     },
     {
         name: "React",
-        iconType: "component",
+        iconType: "remixicon",
         icon: RiReactjsFill
     },
     {
         name: "Svelte",
-        iconType: "component",
+        iconType: "remixicon",
         icon: RiSvelteFill
     },
     {
         name: "Scrum",
-        iconType: "component",
-        icon: Jira
+        iconType: "iconify",
+        icon: "mdi:jira"
     },
     {
         name: "Git",
-        iconType: "component",
-        icon: Git
+        iconType: "iconify",
+        icon: "mdi:git"
     },
 ];
 
 export const coding_languages = [
     {
         name: "PHP",
-        iconType: "component",
+        iconType: "remixicon",
         icon: RiPhpFill
     }
 ];

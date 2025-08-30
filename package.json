@@ -16,6 +16,7 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
+		"@iconify/svelte": "^5.0.1",
 		"@sveltejs/adapter-auto": "^4.0.0",
 		"@sveltejs/adapter-netlify": "^5.2.3",
 		"@sveltejs/adapter-static": "^3.0.9",
@@ -39,6 +40,6 @@
 	},
 	"dependencies": {
 		"@lucide/svelte": "^0.509.0",
-		"svelte-material-icons": "^3.0.5"
+		"embla-carousel-svelte": "^8.6.0"
 	}
 }

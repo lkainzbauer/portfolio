@@ -2,7 +2,8 @@
 // @ts-nocheck
 
     import { technologies, coding_languages } from "$lib/data/skills";
-	import { RiAngularjsFill } from "svelte-remixicon";
+    import Carousel from "$lib/components/Carousel.svelte";
+    import Icon from "@iconify/svelte";
 </script>
 
 <h1><span class="heading-light">LAURA</span> Kainzbauer</h1>
@@ -24,8 +25,10 @@
     <div class="listing">
     {#each technologies as tech, i}
         <div class="list-item">
-            {#if tech.iconType === "component"}
+            {#if tech.iconType === "remixicon"}
                 <tech.icon style="width: 1.3rem; height: 1.3rem"/>
+            {:else if tech.iconType === "iconify"}
+                <Icon icon={tech.icon} style="width:1.3rem; height:1.3rem"/>
             {:else if tech.iconType === "svg"}
                 <img src={'/img/icons/' + tech.icon + '.svg'} style="width: 1rem; height: 1rem; padding: 0.2rem" alt="Icon">
             {/if}
@@ -50,6 +53,8 @@
     {/each}
     </div>
 </div>
+
+<Carousel />
 
 <style lang="scss">
 	@use '/src/styles/index' as *;
