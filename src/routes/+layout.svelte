@@ -23,7 +23,7 @@
 <div id="app">
 
 	{#if !nav.showMenu}
-		<Background --background-size={path === '/' ? '80vh' : '50vh'} />
+		<Background --background-size={path === '/' ? '70vh' : '50vh'} />
 	{/if}
 
 	<MobileNav />
