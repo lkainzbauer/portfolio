@@ -3,7 +3,7 @@
 	import MobileNav from '$lib/components/MobileNav.svelte';
 	import { page } from '$app/state';
 	import Footer from '$lib/components/Footer.svelte';
-	import { nav } from './nav.svelte';
+	import { showMenu } from '$lib/stores/nav';
 
 	let { children } = $props();
 
@@ -12,7 +12,7 @@
 	$effect(() => {
 	path = page.route.id || '';
 	// disable overflow when menu is opened
-    if (!nav.showMenu) return;
+    if (!$showMenu) return;
 		const prev = document.body.style.overflow;
 		document.body.style.overflow = 'hidden';
 		return () => { document.body.style.overflow = prev; };
@@ -22,7 +22,7 @@
 
 <div id="app">
 
-	{#if !nav.showMenu}
+	{#if !$showMenu}
 		<Background --background-size={path === '/' ? '70vh' : '50vh'} />
 	{/if}
 

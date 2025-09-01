@@ -1,29 +1,29 @@
 <script lang="ts">
 	import Logo from '$lib/components/Logo.svelte';
-    import { nav } from '../../routes/nav.svelte';
+    import { showMenu } from '$lib/stores/nav';
     import Icon from "@iconify/svelte";
 	import Socials from './Socials.svelte';
 
     function toggleMenu() {
-		nav.showMenu = !nav.showMenu;
+		showMenu.update(value => !value);
 	}
 
 	function closeMenu() {
-		nav.showMenu = false;
+		showMenu.set(false);
 	}
 
 </script>
 
-<nav id="mobile-menu" class:menu-active={nav.showMenu}>
+<nav id="mobile-menu" class:menu-active={$showMenu}>
 	<div id="menu-bar">
 		<a href="/">
 			<button id="nav-logo" onclick={closeMenu}>
-				<Logo color={nav.showMenu ? '#ffffff' : '#242424'}/>
+				<Logo color={$showMenu ? '#ffffff' : '#242424'}/>
             </button>
 		</a>
 
         <button onclick={toggleMenu}>
-            {#if nav.showMenu}
+            {#if $showMenu}
 			    <Icon icon="mdi:close" class="menu-icon menu-active-icon" />
             {:else} 
                 <Icon icon="mdi:menu" class="menu-icon" />
@@ -31,7 +31,7 @@
 		</button>
 	</div>
 
-	{#if nav.showMenu}
+	{#if $showMenu}
         <div id="mobile-menu-panel">
             <ul id="menu-points">
                 <li>

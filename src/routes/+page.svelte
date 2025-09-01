@@ -5,9 +5,6 @@
 	import Socials from "$lib/components/Socials.svelte";
   let { data } = $props();
 
-  function navigateTo(url: string) {
-    goto('/'+ url);
-  }
 </script>
 
 <div id="home-heading">
@@ -36,9 +33,9 @@
       {#each data.projects as proj, i}
         <!-- svelte-ignore a11y_click_events_have_key_events -->
         <!-- svelte-ignore a11y_no_static_element_interactions -->
-        <div class="embla__slide" onclick={() => navigateTo("portfolio")}>
+        <a class="embla__slide"  href="/portfolio">
           <img class="home-project-img" src="img/projects/{proj.imgName}" alt={proj.name}>
-        </div>
+        </a>
       {/each}
     </Carousel>
   </Reveal>

@@ -5,15 +5,11 @@
 	import Reveal from "./Reveal.svelte";
 
 	let { project }: { project: Project } = $props();
-
-    function navigateTo(url: string) {
-        goto('/portfolio/' + url);
-    }
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<div class="project-listing" onclick={() => navigateTo(project.slug)}>
+<a class="project-listing"  href={"/portfolio/" + project.slug}>
     <Reveal>
     <img class="project-listing-img" src="img/projects/{project.imgName}" alt={project.name}>
     </Reveal>
@@ -35,7 +31,7 @@
         {project.description}
     </div>
     </Reveal>
-</div>
+</a>
 
 <style lang="scss">
     @use '/src/styles/index' as *;
@@ -45,6 +41,8 @@
         align-items: flex-start;
         justify-content: center;
         margin: 2rem 0 4rem;
+        color: $text-clr;
+        text-decoration: none;
     }
 
     .project-listing-img {
