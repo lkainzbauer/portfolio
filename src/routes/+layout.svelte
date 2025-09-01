@@ -4,10 +4,15 @@
 	import { page } from '$app/state';
 	import Footer from '$lib/components/Footer.svelte';
 	import { showMenu } from '$lib/stores/nav';
+	import { afterNavigate } from '$app/navigation';
 
 	let { children } = $props();
 
 	let path = $state('/');
+
+	afterNavigate(() => {
+		window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+	});
 
 	$effect(() => {
 	path = page.route.id || '';

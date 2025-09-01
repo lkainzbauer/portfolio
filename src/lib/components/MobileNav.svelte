@@ -3,6 +3,7 @@
     import { showMenu } from '$lib/stores/nav';
     import Icon from "@iconify/svelte";
 	import Socials from './Socials.svelte';
+    import { page } from '$app/stores';
 
     function toggleMenu() {
 		showMenu.update(value => !value);
@@ -35,13 +36,13 @@
         <div id="mobile-menu-panel">
             <ul id="menu-points">
                 <li>
-                    <a href="/portfolio" onclick={closeMenu}>portfolio</a>
+                    <a href="/portfolio" class:active={$page.url.pathname === '/portfolio'} onclick={closeMenu}>portfolio</a>
                 </li>
                 <li>
-                    <a href="/about-me" onclick={closeMenu}>about me</a>
+                    <a href="/about-me" class:active={$page.url.pathname === '/about-me'} onclick={closeMenu}>about me</a>
                 </li>
                 <li>
-                    <a href="/contact" onclick={closeMenu}>contact me</a>
+                    <a href="/contact" class:active={$page.url.pathname === '/contact'} onclick={closeMenu}>contact me</a>
                 </li>
             </ul>
 
@@ -106,6 +107,11 @@
         a {
             color: $text-clr;
             text-decoration: none;
+
+            &.active {
+                color: $accent1;
+                border-bottom: 2px solid $accent1;
+            }
         }
 	}
 
