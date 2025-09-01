@@ -110,8 +110,4 @@
 		font-weight: bold;
 		margin-bottom: 3rem;
 	}
-
-	.btn-placeholder {
-		height: 1px;
-	}
 </style>
