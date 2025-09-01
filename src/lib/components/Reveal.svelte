@@ -32,3 +32,13 @@
     </div>
   {/if}
 </div>
+
+{#if !entered}
+    <div class="reveal-placeholder"></div>
+{/if}
+
+<style>
+.reveal-placeholder {
+    height: 100vh;
+}
+</style>

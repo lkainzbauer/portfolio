@@ -83,7 +83,12 @@
     --socials-size: 2rem;
 }
 
-:global(.container-outline) {
+:global(.embla__slide) {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+:global(.gradient-outline) {
     --padding-size: 1rem;
     --border-thickness: 0.2rem;
     padding: var(--padding-size);

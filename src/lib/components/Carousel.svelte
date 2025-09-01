@@ -2,7 +2,6 @@
     // @ts-nocheck
     import emblaCarouselSvelte from 'embla-carousel-svelte';
     import Icon from '@iconify/svelte';
-    import { experiences } from '$lib/data/experiences';
 
     let emblaApi;
     let options = { loop: true }
@@ -25,19 +24,7 @@
      use:emblaCarouselSvelte={{ options }}
        onemblaInit={onInit}>
         <div class="embla__container">
-            {#each experiences as exp, i}
-                <div class="embla__slide">
-                    <h3>{exp.company}</h3>
-                    <div class="container-outline carousel-outline">
-                        <span class="experience-description">
-                            {exp.description}
-                        </span>
-                    </div>
-                    <span class="experience-timeframe">
-                        {exp.timeframe}
-                    </span>
-                </div>
-            {/each}
+          <slot />
         </div>
     </div>
     <button class="embla__prev carousel-btn" onclick={prevSlide}><Icon icon="mdi:navigate-before" class="carousel-icon"/></button>
@@ -48,7 +35,6 @@
     @use '/src/styles/index' as *;
 
   .embla {
-    margin: 1.75rem 0;
     position: relative;
   }
 
@@ -85,25 +71,6 @@
 
   :global(.carousel-icon) {
     font-size: 2em;
-  }
-
-  .carousel-outline {
-    border-radius: 50px;
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0.75rem 0;
-    padding: 1.1rem 0;
-  }
-
-  .experience-description {
-    font-size: 1em;
-  }
-
-  .experience-timeframe {
-    font-family: $heading-text;
-    margin: 1rem 0;
   }
 
 </style>

@@ -1,9 +1,8 @@
 <script>
 // @ts-nocheck
-
-    import { technologies, coding_languages } from "$lib/data/skills";
     import Carousel from "$lib/components/Carousel.svelte";
     import Icon from "@iconify/svelte";
+    let { data } = $props();
 </script>
 
 <h1><span class="heading-light">LAURA</span> Kainzbauer</h1>
@@ -17,13 +16,13 @@
 
 <div class="about-me-section">
     <h2 class="outline-heading"><span class="heading-light">My</span> skills</h2>
-    <p class="container-outline">Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+    <p class="gradient-outline">Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
 </div>
 
 <div class="about-me-section" id="about-me-technologies">
     <h3>Technologies</h3>
     <div class="listing technologies">
-    {#each technologies as tech, i}
+    {#each data.technologies as tech, i}
         <div class="list-item">
             <Icon icon={tech.icon} style="width: {tech.icon=="file-icons:d3" ? '1rem' : '1.3rem'}; height:1.3rem"/>
             <span class="list-text">{tech.name}</span>
@@ -35,7 +34,7 @@
 <div class="about-me-section" id="about-me-coding-languages">
     <h3>Coding Languages</h3>
     <div class="listing coding-languages">
-    {#each coding_languages as lang, i}
+    {#each data.coding_languages as lang, i}
         <div class="list-item">
             <Icon icon={lang.icon} style="width:1.3rem; height:1.3rem"/>
             <span class="list-text">{lang.name}</span>
@@ -46,7 +45,21 @@
 
 <div class="about-me-section" id="about-me-experience">
     <h2 class="outline-heading"><span class="heading-light">My</span> experience</h2>
-    <Carousel />
+    <Carousel>
+            {#each data.experiences as exp, i}
+                <div class="embla__slide">
+                    <h3>{exp.company}</h3>
+                    <div class="gradient-outline carousel-outline">
+                        <span class="experience-description">
+                            {exp.description}
+                        </span>
+                    </div>
+                    <span class="experience-timeframe">
+                        {exp.timeframe}
+                    </span>
+                </div>
+            {/each}
+    </Carousel>
 </div>
 
 <style lang="scss">
@@ -108,6 +121,32 @@
         color: $bg;
         border-radius: 20px;
         height: 1.5rem;
+    }
+
+    .embla__slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-outline {
+        border-radius: 50px;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0.75rem 0;
+        padding: 1.1rem 0;
+    }
+
+    .experience-description {
+        font-size: 1em;
+    }
+
+    .experience-timeframe {
+        font-family: $heading-text;
+        margin: 1rem 0;
     }
 
     #hero {

@@ -5,7 +5,7 @@
 
 <h1>Contact</h1>
 
-<div class="contact-section container-outline" id="contact-short">
+<div class="contact-section gradient-outline" id="contact-short">
     <h2 class="outline-heading"><span class="heading-light">Contact</span> Me</h2>
     <span>laura.kainzbauer@gmail.com</span>
     <Socials --socials-size="1.6rem" />
