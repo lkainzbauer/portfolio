@@ -1,6 +1,4 @@
 <script>
-    import { fly, fade } from "svelte/transition";
-  import { inview } from "$lib/actions/inview";
   import Reveal from "$lib/components/Reveal.svelte";
 
 
