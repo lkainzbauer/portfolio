@@ -47,14 +47,7 @@
     display: flex;
     width: 100%;
   }
-  .embla__slide {
-    flex: 0 0 100%;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+  
   .carousel-btn {
     position: absolute;
     padding: 0;

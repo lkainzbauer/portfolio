@@ -1,15 +1,15 @@
 <script lang="ts">
   import { fly } from "svelte/transition";
 
-  export let threshold: number | number[] = 0.50;
-  export let root: Element | null = null;           // keep null unless you have a scroll container
+  export let threshold: number | number[] = 0.50; // visible parts of element before revealing
+  export let root: Element | null = null; // use viewport as root
   export let rootMargin = "0px";
-  export let once = true;
-  export let y = 200;           // fly distance
-  export let duration = 500;   // fly duration
+  export let once = true; // only reveal once on first scrolling
+  export let y = 200;
+  export let duration = 500;
   export let delay = 0;
 
-  let entered = false; // avoid SSR hydration mismatch
+  let entered = false;
 
   function setup(node: HTMLElement) {
 

@@ -74,6 +74,7 @@
 
   #home-intro {
     position: relative;
+    margin-bottom: 5rem;
   }
 
   #home-intro-text {
