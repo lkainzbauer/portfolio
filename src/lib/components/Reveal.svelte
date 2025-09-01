@@ -1,9 +1,7 @@
 <script lang="ts">
   import { fly } from "svelte/transition";
-  import { browser } from "$app/environment"; // SvelteKit; remove if not using Kit
 
-  export let as: keyof HTMLElementTagNameMap = "div"; // wrapper tag
-  export let threshold: number | number[] = 0.15;
+  export let threshold: number | number[] = 0.50;
   export let root: Element | null = null;           // keep null unless you have a scroll container
   export let rootMargin = "0px";
   export let once = true;
@@ -14,10 +12,7 @@
   let entered = false; // avoid SSR hydration mismatch
 
   function setup(node: HTMLElement) {
-    if (!browser || typeof IntersectionObserver === "undefined") {
-      entered = true;
-      return { destroy() {} };
-    }
+
     const io = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         entered = true;
