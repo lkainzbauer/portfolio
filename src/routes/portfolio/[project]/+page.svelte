@@ -2,6 +2,7 @@
 	import Icon from '@iconify/svelte';
 	import type { PageProps } from './$types';
 	import { goto } from '$app/navigation';
+	import Reveal from '$lib/components/Reveal.svelte';
 
 	let { data }: PageProps = $props();
 	
@@ -10,13 +11,20 @@
 	}
 </script>
 
+<Reveal>
 <h1 id="project-heading">{data.project.name}</h1>
+</Reveal>
+<Reveal>
 <button onclick={() => goBack()} id="back-btn">
 	<Icon icon="mdi:arrow-back"></Icon>
 	<span>all projects</span>
 </button>
+</Reveal>
 <div class="project-section">
+	<Reveal>
 	<img class="project-img" src="/img/projects/{data.project.imgName}" alt={data.project.name}>
+	</Reveal>
+	<Reveal>
 	<div class="project-technologies">
         {#each data.project.technologies as tech, i}
             <div class="list-item">
@@ -25,12 +33,17 @@
             </div>
         {/each}
     </div>
+	</Reveal>
+	<Reveal>
 	<div class="gradient-outline" id="project-description">{@html data.project.description}</div>
+	</Reveal>
+	<Reveal>
 	{#if data.project.url}
-		<div class="gradient-background main-btn home-project-btn">
-			<a class="main-btn home-project-btn" href={data.project.url}>give it a try</a>
+		<div class="gradient-background main-btn">
+			<a class="main-btn" href={data.project.url}>give it a try</a>
 		</div>
 	{/if}
+	</Reveal>
 </div>
 
 <style lang="scss">
@@ -57,6 +70,7 @@
 
 	.project-img {
         width: 120%;
+		margin-left: -10%;
     }
 
 	.project-technologies {
@@ -95,5 +109,9 @@
 		gap: 0.3rem;
 		font-weight: bold;
 		margin-bottom: 3rem;
+	}
+
+	.btn-placeholder {
+		height: 1px;
 	}
 </style>

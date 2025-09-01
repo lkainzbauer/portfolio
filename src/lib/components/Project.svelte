@@ -2,6 +2,7 @@
 	import { goto } from "$app/navigation";
 	import type { Project } from "$lib/types/project";
 	import Icon from "@iconify/svelte";
+	import Reveal from "./Reveal.svelte";
 
 	let { project }: { project: Project } = $props();
 
@@ -13,8 +14,13 @@
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div class="project-listing" onclick={() => navigateTo(project.slug)}>
+    <Reveal>
     <img class="project-listing-img" src="img/projects/{project.imgName}" alt={project.name}>
+    </Reveal>
+    <Reveal>
     <h2>{project.name}</h2>
+    </Reveal>
+    <Reveal>
     <div class="project-listing-technologies">
         {#each project.technologies as tech, i}
             <div class="list-item">
@@ -23,9 +29,12 @@
             </div>
         {/each}
     </div>
+    </Reveal>
+    <Reveal>
     <div>
         {project.description}
     </div>
+    </Reveal>
 </div>
 
 <style lang="scss">

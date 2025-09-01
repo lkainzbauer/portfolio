@@ -2,25 +2,39 @@
 // @ts-nocheck
     import Carousel from "$lib/components/Carousel.svelte";
     import Icon from "@iconify/svelte";
+    import Reveal from "$lib/components/Reveal.svelte";
     let { data } = $props();
 </script>
 
+<Reveal>
 <h1><span class="heading-light">LAURA</span> Kainzbauer</h1>
+</Reveal>
 
 <div id="hero"></div>
 
 <div class="about-me-section" id="about-me-intro">
+    <Reveal>
     <h2 class="heading-underlined"><span class="heading-light">Hi</span> there</h2>
+    </Reveal>
+    <Reveal>
     <p>Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+    </Reveal>
 </div>
 
 <div class="about-me-section">
+    <Reveal>
     <h2 class="outline-heading"><span class="heading-light">My</span> skills</h2>
+    </Reveal>
+    <Reveal>
     <p class="gradient-outline">Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+    </Reveal>
 </div>
 
 <div class="about-me-section" id="about-me-technologies">
+    <Reveal>
     <h3>Technologies</h3>
+    </Reveal>
+    <Reveal>
     <div class="listing technologies">
     {#each data.technologies as tech, i}
         <div class="list-item">
@@ -29,10 +43,14 @@
         </div>
     {/each}
     </div>
+    </Reveal>
 </div>
 
 <div class="about-me-section" id="about-me-coding-languages">
+    <Reveal>
     <h3>Coding Languages</h3>
+    </Reveal>
+    <Reveal>
     <div class="listing coding-languages">
     {#each data.coding_languages as lang, i}
         <div class="list-item">
@@ -41,10 +59,14 @@
         </div>
     {/each}
     </div>
+    </Reveal>
 </div>
 
 <div class="about-me-section" id="about-me-experience">
+    <Reveal>
     <h2 class="outline-heading"><span class="heading-light">My</span> experience</h2>
+    </Reveal>
+    <Reveal>
     <Carousel>
             {#each data.experiences as exp, i}
                 <div class="embla__slide">
@@ -60,6 +82,7 @@
                 </div>
             {/each}
     </Carousel>
+    </Reveal>
 </div>
 
 <style lang="scss">
