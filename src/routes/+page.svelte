@@ -18,7 +18,7 @@
 
 <Reveal>
 <div class="home-section gradient-outline" id="home-intro">
-  <p id="home-intro-text">Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim.</p>
+  <p id="home-intro-text">Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
   <a class="gradient-background main-btn" id="home-intro-btn" href="/about-me">about me</a>
 </div>
 </Reveal>
