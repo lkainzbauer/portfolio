@@ -76,6 +76,7 @@
 
   #home-intro-text {
     margin: 0;
+    padding-bottom: 1rem;
   }
 
   #home-intro-btn {
