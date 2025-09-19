@@ -128,11 +128,15 @@
 
   @media (min-width: 768px) {
     #home-heading {
-      margin: 5rem 0 8rem 0;
+      margin: 2rem 0 8rem 0;
     }
 
     .greeting {
       font-size: 1.7em;
+    }
+
+    #home-intro-text {
+      padding: 0;
     }
   }
 </style>

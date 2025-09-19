@@ -30,7 +30,7 @@
 <div id="app">
 
 	{#if !$showMenu}
-		<Background --background-size={path === '/' ? '70vh' : '50vh'} />
+		<Background --background-size={path === '/' ? '40rem' : $isMobile ? '28rem' : '32rem'} />
 	{/if}
 
 	{#if $isMobile}

@@ -16,7 +16,7 @@
 </div>
 </Reveal>
 
-<div class="contact-section">
+<div class="contact-section" id="contact-extra">
     <Reveal>
     <p>Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
     </Reveal>
@@ -38,7 +38,16 @@
 
     #contact-short {
         margin-top: 10rem;
-        width: 80%;
         padding: 3rem 2rem;
+    }
+
+    @media (min-width: 768px) {
+        #contact-short {
+            padding: 5rem 8rem;
+        }
+
+        #contact-extra {
+            width: 50%;
+        }
     }
 </style>

@@ -3,6 +3,7 @@
 	import type { Project } from "$lib/types/project";
 	import Icon from "@iconify/svelte";
 	import Reveal from "./Reveal.svelte";
+	import { isMobile } from "$lib/stores/layout";
 
 	let { project }: { project: Project } = $props();
 </script>
@@ -10,27 +11,52 @@
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <a class="project-listing"  href={"/portfolio/" + project.slug}>
-    <Reveal>
-    <img class="project-listing-img" src="img/projects/{project.imgName}" alt={project.name}>
-    </Reveal>
-    <Reveal>
-    <h2>{project.name}</h2>
-    </Reveal>
-    <Reveal>
-    <div class="project-listing-technologies">
-        {#each project.technologies as tech, i}
-            <div class="list-item">
-                <Icon icon={tech.icon} style="width: '1.3rem'; height:1.3rem"/>
-                <span class="list-text">{tech.name}</span>
+    <div class="project-listing-img-container">
+        <Reveal>
+        <img class="project-listing-img" src="img/projects/{project.imgName}" alt={project.name}>
+        </Reveal>
+    </div>
+    {#if $isMobile}
+        <div class="project-listing-text project-listing-text-container" class:gradient-outline={!$isMobile}>
+            <Reveal>
+                <h2>{project.name}</h2>
+            </Reveal>
+            <Reveal>
+            <div class="project-listing-technologies">
+                {#each project.technologies as tech, i}
+                    <div class="list-item">
+                        <Icon icon={tech.icon} style="width: '1.3rem'; height:1.3rem"/>
+                        <span class="list-text">{tech.name}</span>
+                    </div>
+                {/each}
             </div>
-        {/each}
-    </div>
-    </Reveal>
-    <Reveal>
-    <div>
-        {project.description}
-    </div>
-    </Reveal>
+            </Reveal>
+            <Reveal>
+            <div>
+                {project.description}
+            </div>
+            </Reveal>
+        </div>
+    {:else}
+        <div class="project-listing-text-container">
+            <Reveal>
+                <div class="project-listing-text" class:gradient-outline={!$isMobile}>
+                    <h2>{project.name}</h2>
+                    <div class="project-listing-technologies">
+                        {#each project.technologies as tech, i}
+                            <div class="list-item">
+                                <Icon icon={tech.icon} style="width: '1.3rem'; height:1.3rem"/>
+                                <span class="list-text">{tech.name}</span>
+                            </div>
+                        {/each}
+                    </div>
+                    <div>
+                        {project.description}
+                    </div>
+                </div>
+            </Reveal>
+        </div>
+    {/if}
 </a>
 
 <style lang="scss">
@@ -74,5 +100,27 @@
         color: $bg;
         border-radius: 20px;
         height: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .project-listing {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .project-listing-text-container {
+            flex: 1;
+        }
+
+        .project-listing-img-container {
+            flex: 1;
+        }
+
+        .project-listing:nth-of-type(odd) {
+            flex-direction: row-reverse;
+        }
     }
 </style>

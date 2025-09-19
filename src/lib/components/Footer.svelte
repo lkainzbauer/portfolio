@@ -74,6 +74,7 @@
     @media (min-width: 768px) {
         #footer-content {
             margin: 0 12rem;
+            padding: 1.5rem;
         }
 
         a {

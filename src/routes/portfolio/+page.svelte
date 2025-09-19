@@ -1,6 +1,7 @@
 <script>
 	import Project from '$lib/components/Project.svelte';
 	import Reveal from '$lib/components/Reveal.svelte';
+	import { isMobile } from '$lib/stores/layout.js';
 
     let { data } = $props();
 </script>
@@ -18,7 +19,7 @@
     <div class="portfolio-section">
         {#each data.projects as project, i}
             <Project project={project}></Project>
-            {#if i < data.projects.length - 1}
+            {#if i < data.projects.length - 1 && $isMobile}
                 <div class="seperator gradient-background"></div>
             {/if}
         {/each}
@@ -43,4 +44,16 @@
         width: 80%;
         border-radius: 2rem;
     }
+
+    @media (min-width: 768px) {
+        .portfolio-section {
+            margin: 4rem 0 0;
+        }
+
+        #portfolio-intro {
+            width: 50%;
+            margin: 10rem auto 0;
+        }
+    }
+
 </style>

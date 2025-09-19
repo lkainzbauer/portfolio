@@ -159,6 +159,7 @@
 
     :global(h1) {
         font-size: $desktop-xl-font;
+        margin-top: 4rem;
     }
 
     :global(h2) {
@@ -167,5 +168,10 @@
 
     :global(h3) {
         font-size: $desktop-m-font;
+    }
+
+    :global(.gradient-outline) {
+        --border-thickness: 0.35rem;
+        --padding-size: 2rem;
     }
 }
