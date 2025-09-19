@@ -95,8 +95,14 @@ $heading-text: "Mohave", "Roboto", "Helvetica Neue", "Segoe UI", "Noto Sans", "L
 
 
 // font sizes
-$s-font: 0.8em;
-$normal-font: 1em;
-$m-font: 1.6em;
-$l-font: 1.9em;
-$xl-font: 3.6em;
+$mobile-s-font: 0.8em;
+$mobile-reg-font: 1em;
+$mobile-m-font: 1.6em;
+$mobile-l-font: 1.9em;
+$mobile-xl-font: 3.6em;
+
+$desktop-s-font: 1em;
+$desktop-reg-font: 1em;
+$desktop-m-font: 1.8em;
+$desktop-l-font: 2.5em;
+$desktop-xl-font: 7em;

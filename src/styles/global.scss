@@ -6,7 +6,7 @@
     color: $text-clr;
     font-family: $cont-text;
     min-height: 100%;
-    font-size: $normal-font;
+    font-size: $mobile-reg-font;
 }
 
 :global(body) {
@@ -23,17 +23,17 @@
 }
 
 :global(h1) {
-    font-size: $xl-font;
+    font-size: $mobile-xl-font;
     color: $bg;
     width: 100%;
 }
 
 :global(h2) {
-    font-size: $l-font;
+    font-size: $mobile-l-font;
 }
 
 :global(h3) {
-    font-size: $m-font;
+    font-size: $mobile-m-font;
     font-weight: 500;
 }
 
@@ -82,6 +82,7 @@
 :global(:root) {
     --background-size: 50vh;
     --socials-size: 2rem;
+    --socials-color: $accent2;
 }
 
 :global(.embla__slide) {
@@ -152,9 +153,19 @@
 }
 
 @media (min-width: 768px) {
+    :global(html) {
+        font-size: $desktop-reg-font;
+    }
 
-}
+    :global(h1) {
+        font-size: $desktop-xl-font;
+    }
 
-@media (min-width: 1440px) {
+    :global(h2) {
+        font-size: $desktop-l-font;
+    }
 
+    :global(h3) {
+        font-size: $desktop-m-font;
+    }
 }

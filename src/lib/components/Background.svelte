@@ -1,4 +1,10 @@
-<div class="aurora"></div>
+<script lang="ts">
+  import { isMobile } from '$lib/stores/layout';
+</script>
+
+<div class="aurora"
+  style={`background-image: url('/img/${$isMobile ? 'background-mobile' : 'background'}.svg')`}
+></div>
 
 <style lang="scss">
   .aurora {
@@ -7,7 +13,8 @@
     z-index: -1000;
     position: absolute;
     top: 0;
-    background: url("/img/background-mobile.svg") no-repeat bottom center;
+    background-repeat: no-repeat;
+    background-position: bottom center;
     background-size: cover;
   }
 </style>

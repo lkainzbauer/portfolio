@@ -5,6 +5,8 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { showMenu } from '$lib/stores/nav';
 	import { afterNavigate } from '$app/navigation';
+	import Nav from '$lib/components/Nav.svelte';
+	import { isMobile } from '$lib/stores/layout';
 
 	let { children } = $props();
 
@@ -31,7 +33,11 @@
 		<Background --background-size={path === '/' ? '70vh' : '50vh'} />
 	{/if}
 
-	<MobileNav />
+	{#if $isMobile}
+		<MobileNav />
+	{:else}
+		<Nav />
+	{/if}
 
 	<div id="main-content">
 		{@render children()}
@@ -56,5 +62,11 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	@media (min-width: 768px) {
+		#main-content {
+			margin: 0 7rem 1.5rem 7rem;
+		}
 	}
 </style>

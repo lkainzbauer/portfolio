@@ -1,9 +1,12 @@
 <script>
+	import { isMobile } from "$lib/stores/layout";
 	import AnimatedLogo from "./AnimatedLogo.svelte";
 	import Logo from "./Logo.svelte";
 
 </script>
-<div id="footer">
+<div id="footer"
+    style={`background-image: url('/img/${$isMobile ? 'footer-mobile' : 'footer'}.svg')`}
+>
     <div id="footer-content">
             <a href="/legal">imprint & privacy</a>
             <div id="info">
@@ -24,7 +27,8 @@
         padding-bottom: 1rem;
         position: static;
         bottom: 0;
-        background: url("/img/footer-mobile.svg") no-repeat top center;
+        background-repeat: no-repeat;
+        background-position: top center;
         background-size: cover;
         display: flex;
         align-items: center;
@@ -38,7 +42,8 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        width: 80%;
+        width: 100%;
+        margin: 0 1.2rem;
         background-color: $bg;
         border-radius: 12px;
         padding: 1rem 1.5rem;
@@ -52,7 +57,7 @@
     a {
         color: $text-clr;
         text-decoration: none;
-        font-size: $s-font;
+        font-size: $mobile-s-font;
     }
 
     #info {
@@ -64,5 +69,15 @@
 
     #footer-logo {
         width: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        #footer-content {
+            margin: 0 12rem;
+        }
+
+        a {
+            font-size: $desktop-s-font;
+        }
     }
 </style>

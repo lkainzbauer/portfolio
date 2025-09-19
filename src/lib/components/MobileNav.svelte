@@ -18,7 +18,7 @@
 <nav id="mobile-menu" class:menu-active={$showMenu}>
 	<div id="menu-bar">
 		<a href="/">
-			<button id="nav-logo" onclick={closeMenu}>
+			<button id="mobile-nav-logo" onclick={closeMenu}>
 				<Logo color={$showMenu ? '#ffffff' : '#242424'}/>
             </button>
 		</a>
@@ -70,7 +70,7 @@
 		padding: 1.5rem 2rem;
 	}
 
-	#nav-logo {
+	#mobile-nav-logo {
 		width: 2rem;
 		display: inline-flex;
 	}
@@ -100,7 +100,7 @@
 		flex-direction: column;
 		align-items: center;
         gap: 2rem;
-        font-size: $m-font;
+        font-size: $mobile-m-font;
         list-style-type: none;
         padding: 0;
 
@@ -110,7 +110,6 @@
 
             &.active {
                 color: $accent1;
-                border-bottom: 2px solid $accent1;
             }
         }
 	}

@@ -21,4 +21,11 @@
   :global(.animated-logo svg) {
     display: none;
   }
+
+  @media (min-width: 768px) {
+    :global(.animated-logo) {
+      width: 2.2rem;
+      height: 2.8rem;
+    }
+  }
 </style>

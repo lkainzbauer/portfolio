@@ -20,6 +20,6 @@
     :global(.social) {
         height: var(--socials-size);
         width: var(--socials-size);
-        color: $accent2;
+        color: var(--socials-color);
     }
 </style>
