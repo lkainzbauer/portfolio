@@ -46,7 +46,7 @@
                 </li>
             </ul>
 
-            <Socials />
+            <Socials --socials-color="#7BF9B4" />
         </div>
 	{/if}
 </nav>

@@ -31,4 +31,10 @@
         margin-top: 10rem;
     }
 
+    @media (min-width: 768px) {
+        h1 { 
+            font-size: 5.3em;
+        }
+    }
+
 </style>

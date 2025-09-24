@@ -77,12 +77,12 @@
     color: $bg;
     font-weight: bold;
     font-style: italic;
+    width: fit-content;
 }
 
-:global(:root) {
+:global(.social) {
     --background-size: 50vh;
     --socials-size: 2rem;
-    --socials-color: $accent2;
 }
 
 :global(.embla__slide) {
@@ -144,6 +144,10 @@
     background-size: 300% 300%;
 
     animation: shift 5s ease infinite;
+
+    &:hover {
+        color:#ffffff;
+    }
 }
 
 @keyframes shift { 

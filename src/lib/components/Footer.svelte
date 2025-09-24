@@ -79,6 +79,10 @@
 
         a {
             font-size: $desktop-s-font;
+
+            &:hover {
+                color: $accent2;
+            }
         }
     }
 </style>

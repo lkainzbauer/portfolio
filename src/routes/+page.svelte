@@ -28,25 +28,27 @@
   <Reveal>
     <h2 class="heading-underlined"><span class="heading-light">My </span> Projects</h2>
   </Reveal>
-  <Reveal>
-    <Carousel>
-      {#each data.projects as proj, i}
-        <!-- svelte-ignore a11y_click_events_have_key_events -->
-        <!-- svelte-ignore a11y_no_static_element_interactions -->
-        <a class="embla__slide"  href="/portfolio">
-          <img class="home-project-img" src="img/projects/{proj.imgName}" alt={proj.name}>
-        </a>
-      {/each}
-    </Carousel>
-  </Reveal>
-  <Reveal>
-  <p>Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
-  </Reveal>
-  <Reveal>
-  <div class="gradient-background main-btn home-project-btn">
-    <a class="main-btn home-project-btn" href="/portfolio">take a look</a>
+  <div class="home-project-content">
+    <Reveal>
+      <Carousel>
+        {#each data.projects as proj, i}
+          <!-- svelte-ignore a11y_click_events_have_key_events -->
+          <!-- svelte-ignore a11y_no_static_element_interactions -->
+          <a class="embla__slide"  href={"/portfolio/" + proj.slug}>
+            <img class="home-project-img" src="img/projects/{proj.imgName}" alt={proj.name}>
+          </a>
+        {/each}
+      </Carousel>
+    </Reveal>
+    <div id="home-project-info">
+      <Reveal>
+      <p>Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+      </Reveal>
+      <Reveal>
+        <a class="gradient-background main-btn home-project-btn" href="/portfolio">take a look</a>
+      </Reveal>
+    </div>
   </div>
-  </Reveal>
 </div>
 
 <div class="home-section">
@@ -55,7 +57,7 @@
   </Reveal>
   <Reveal>
   <div class="gradient-outline">
-    <Socials />
+    <Socials --socials-color="#ffffff"/>
   </div>
   </Reveal>
 </div>
@@ -105,12 +107,20 @@
     width: 100%;
   }
 
+  #home-project-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .home-project-img {
     width: 100%;
   }
 
   .home-project-btn {
+    display: block;
     margin-top: 1rem;
+    padding: 0.9rem 4rem;
   }
 
   #home-section-contact {
@@ -131,12 +141,27 @@
       margin: 2rem 0 8rem 0;
     }
 
+    #home-intro {
+      width: 40rem;
+    }
+
     .greeting {
       font-size: 1.7em;
     }
 
     #home-intro-text {
       padding: 0;
+    }
+
+    .home-project-content {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    #home-project-info {
+      align-items: flex-end;
+      gap: 1rem;
     }
   }
 </style>

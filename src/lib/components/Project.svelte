@@ -122,5 +122,11 @@
         .project-listing:nth-of-type(odd) {
             flex-direction: row-reverse;
         }
+
+        a:hover {
+            h2 {
+                color: $accent1;
+            }
+        }
     }
 </style>

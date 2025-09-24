@@ -2,6 +2,8 @@
 	import { page } from '$app/stores';
 	import Logo from '$lib/components/Logo.svelte';
 	import Socials from './Socials.svelte';
+
+    let hovered = false;
 </script>
 
 <nav id="nav">
@@ -11,8 +13,8 @@
         <a href="/contact" class:active={$page.url.pathname === '/contact'}>contact me</a>
     </div>
     <div class="nav-container">
-        <a href="/" id="nav-logo">
-            <Logo color='#242424'/>
+        <a href="/" id="nav-logo" onmouseenter={() => hovered = true} onmouseleave={() => hovered = false}>
+            <Logo color={/*hovered ? '#7BF9B4' :*/'#242424'}/>
         </a>
     </div>
     <div class="nav-container" id="social-links">
@@ -47,6 +49,10 @@
 
             &.active {
                 color: $accent1;
+            }
+
+            &:hover {
+                color: $accent2;
             }
         }
     }

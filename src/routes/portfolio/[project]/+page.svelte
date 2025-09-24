@@ -3,6 +3,7 @@
 	import type { PageProps } from './$types';
 	import { goto } from '$app/navigation';
 	import Reveal from '$lib/components/Reveal.svelte';
+	import { isMobile } from "$lib/stores/layout";
 
 	let { data }: PageProps = $props();
 	
@@ -25,24 +26,39 @@
 	<img class="project-img" src="/img/projects/{data.project.imgName}" alt={data.project.name}>
 	</Reveal>
 	<Reveal>
-	<div class="project-technologies">
-        {#each data.project.technologies as tech, i}
-            <div class="list-item">
-                <Icon icon={tech.icon} style="width: '1.3rem'; height:1.3rem"/>
-                <span class="list-text">{tech.name}</span>
-            </div>
-        {/each}
-    </div>
-	</Reveal>
-	<Reveal>
-	<div class="gradient-outline" id="project-description">{@html data.project.description}</div>
-	</Reveal>
-	<Reveal>
-	{#if data.project.url}
-		<div class="gradient-background main-btn">
-			<a class="main-btn" href={data.project.url}>give it a try</a>
+	<div class="project-info">
+		<Reveal>
+		<div class="project-technologies">
+			{#each data.project.technologies as tech, i}
+				<div class="list-item">
+					<Icon icon={tech.icon} style="width: '1.3rem'; height:1.3rem"/>
+					<span class="list-text">{tech.name}</span>
+				</div>
+			{/each}
 		</div>
-	{/if}
+		</Reveal>
+		{#if $isMobile}
+			<Reveal>
+			<div class="gradient-outline" id="project-description">{@html data.project.description}</div>
+			</Reveal>
+			<Reveal>
+			{#if data.project.url}
+				<div class="gradient-background main-btn project-url">
+					<a class="main-btn" href={data.project.url}>give it a try</a>
+				</div>
+			{/if}
+			</Reveal>
+		{:else}
+			<Reveal>
+			<div class="gradient-outline" id="project-description">
+				{@html data.project.description}
+				{#if data.project.url}
+					<a class="gradient-background main-btn project-url" href={data.project.url}>give it a try</a>
+				{/if}
+			</div>
+			</Reveal>
+		{/if}
+	</div>
 	</Reveal>
 </div>
 
@@ -72,6 +88,12 @@
         width: 120%;
 		margin-left: -10%;
     }
+
+	.project-info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
 	.project-technologies {
         display: flex;
@@ -109,5 +131,40 @@
 		gap: 0.3rem;
 		font-weight: bold;
 		margin-bottom: 3rem;
+		cursor: pointer;
+
+		&:hover {
+			color: $accent1;
+		}
+	}
+
+	@media (min-width: 768px) {
+		#back-btn {
+			width: fit-content;
+			inline-size: fit-content;
+		}
+
+		.project-section {
+			flex-direction: row;
+		}
+
+		.project-img {
+			width: 35rem;
+			margin: 0;
+		}
+
+		.project-info {
+			align-items: flex-start;
+		}
+
+		#project-description {
+			position: relative;
+		}
+
+		.project-url {
+			position: absolute;
+			bottom: -1.5rem;
+			right: 1rem;
+		}
 	}
 </style>

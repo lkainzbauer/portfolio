@@ -42,6 +42,14 @@
       height: 100vh;
   }
 
+  .reveal-container {
+    width: fit-content;
+  }
+
+  .reveal-inner-container {
+    width: fit-content;
+  }
+
   .reveal-container:has(> .reveal-inner-container > :global(h1)),
   .reveal-container:has(> .reveal-inner-container > :global(#back-btn)) {
     inline-size: 100%;

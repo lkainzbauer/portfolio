@@ -66,4 +66,10 @@
     font-size: 2em;
   }
 
+  @media (min-width: 768px) {
+    .embla {
+      width: 50rem;
+    }
+  }
+
 </style>
