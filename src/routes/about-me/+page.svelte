@@ -10,15 +10,17 @@
 <h1><span class="heading-light">LAURA</span> Kainzbauer</h1>
 </Reveal>
 
-<div id="hero"></div>
+<div id="about-me-top">
+    <div id="hero"></div>
 
-<div class="about-me-section" id="about-me-intro">
-    <Reveal>
-    <h2 class="heading-underlined"><span class="heading-light">Hi</span> there</h2>
-    </Reveal>
-    <Reveal>
-    <p>Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
-    </Reveal>
+    <div class="about-me-section" id="about-me-intro">
+        <Reveal>
+        <h2 class="heading-underlined"><span class="heading-light">Hi</span> there</h2>
+        </Reveal>
+        <Reveal>
+        <p>Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+        </Reveal>
+    </div>
 </div>
 
 <div class="about-me-section">
@@ -30,36 +32,38 @@
     </Reveal>
 </div>
 
-<div class="about-me-section" id="about-me-technologies">
-    <Reveal>
-    <h3>Technologies</h3>
-    </Reveal>
-    <Reveal>
-    <div class="listing technologies">
-    {#each data.technologies as tech, i}
-        <div class="list-item">
-            <Icon icon={tech.icon} style="width: {tech.icon=="file-icons:d3" ? '1rem' : '1.3rem'}; height:1.3rem"/>
-            <span class="list-text">{tech.name}</span>
+<div class="about-me-section" id="about-me-tags">
+    <div class="about-me-section" id="about-me-technologies">
+        <Reveal>
+        <h3>Technologies</h3>
+        </Reveal>
+        <Reveal>
+        <div class="listing technologies">
+        {#each data.technologies as tech, i}
+            <div class="list-item">
+                <Icon icon={tech.icon} style="width: {tech.icon=="file-icons:d3" ? '1rem' : '1.3rem'}; height:1.3rem"/>
+                <span class="list-text">{tech.name}</span>
+            </div>
+        {/each}
         </div>
-    {/each}
+        </Reveal>
     </div>
-    </Reveal>
-</div>
 
-<div class="about-me-section" id="about-me-coding-languages">
-    <Reveal>
-    <h3>Coding Languages</h3>
-    </Reveal>
-    <Reveal>
-    <div class="listing coding-languages">
-    {#each data.coding_languages as lang, i}
-        <div class="list-item">
-            <Icon icon={lang.icon} style="width:1.3rem; height:1.3rem"/>
-            <span class="list-text">{lang.name}</span>
+    <div class="about-me-section" id="about-me-coding-languages">
+        <Reveal>
+        <h3>Coding Languages</h3>
+        </Reveal>
+        <Reveal>
+        <div class="listing coding-languages">
+        {#each data.coding_languages as lang, i}
+            <div class="list-item">
+                <Icon icon={lang.icon} style="width:1.3rem; height:1.3rem"/>
+                <span class="list-text">{lang.name}</span>
+            </div>
+        {/each}
         </div>
-    {/each}
+        </Reveal>
     </div>
-    </Reveal>
 </div>
 
 <div class="about-me-section" id="about-me-experience">
@@ -96,6 +100,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: calc(100% - 4rem);
+        margin: 0 2rem;
     }
 
     #about-me-coding-languages {
@@ -106,6 +112,8 @@
 
     #about-me-experience {
         margin: 4.5rem 0 2rem 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .coding-languages {
@@ -198,5 +206,32 @@
             #000 calc(100% - var(--bottom-fade)),
             transparent 100%
         );
+    }
+
+    @media (min-width: 768px) {
+
+        #about-me-top {
+            display: flex;
+            margin-top: 12rem;
+        }
+
+        #about-me-intro {
+            width: fit-content;
+        }
+
+        #hero {
+            max-width: none;
+            width: 30vw;
+            height: 50vh;
+        }
+
+        #about-me-tags {
+            display: flex;
+            gap: 2rem;
+        }
+
+        :global(#about-me-experience > div:nth-child(2)) {
+            align-self: center;
+        }
     }
 </style>

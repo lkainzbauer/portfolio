@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
 	import Carousel from "$lib/components/Carousel.svelte";
   import Reveal from "$lib/components/Reveal.svelte";
 	import Socials from "$lib/components/Socials.svelte";
   let { data } = $props();
+  import { isMobile } from "$lib/stores/layout";
 
 </script>
 
@@ -52,14 +52,23 @@
 </div>
 
 <div class="home-section">
+  {#if $isMobile}
   <Reveal>
-    <p class="heading-underlined" id="home-section-contact">Feel Free To Contact Me!</p>
+    <p class="heading-underlined" id="home-section-contact-text">Feel Free To Contact Me!</p>
   </Reveal>
   <Reveal>
   <div class="gradient-outline">
     <Socials --socials-color="#ffffff"/>
   </div>
   </Reveal>
+  {:else}
+  <Reveal>
+  <div class="gradient-outline" id="home-section-contact">
+    <p class="heading-underlined" id="home-section-contact-text">Feel Free To Contact Me!</p>
+    <Socials --socials-color="#ffffff"/>
+  </div>
+  </Reveal>
+  {/if}
 </div>
 
 <style lang="scss">
@@ -123,7 +132,7 @@
     padding: 0.9rem 4rem;
   }
 
-  #home-section-contact {
+  #home-section-contact-text {
     margin: 0;
     margin-bottom: 2rem;
     font-size: 1.2em;
@@ -162,6 +171,13 @@
     #home-project-info {
       align-items: flex-end;
       gap: 1rem;
+    }
+
+    #home-section-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 4rem;
     }
   }
 </style>
