@@ -3,6 +3,7 @@
     import Carousel from "$lib/components/Carousel.svelte";
     import Icon from "@iconify/svelte";
     import Reveal from "$lib/components/Reveal.svelte";
+	import { isMobile } from "$lib/stores/layout";
     let { data } = $props();
 </script>
 
@@ -11,7 +12,19 @@
 </Reveal>
 
 <div id="about-me-top">
-    <div id="hero"></div>
+    {#if $isMobile}
+        <div id="hero"></div>
+    {:else}
+        <Reveal>
+            <div id="hero"></div>
+        </Reveal>
+    {/if}
+
+    {#if !$isMobile}
+        <div id="about-me-seperator">
+            <div class="seperator gradient-background"></div>
+        </div>
+    {/if}
 
     <div class="about-me-section" id="about-me-intro">
         <Reveal>
@@ -23,7 +36,7 @@
     </div>
 </div>
 
-<div class="about-me-section">
+<div class="about-me-section" id="about-me-skills">
     <Reveal>
     <h2 class="outline-heading"><span class="heading-light">My</span> skills</h2>
     </Reveal>
@@ -213,16 +226,75 @@
         #about-me-top {
             display: flex;
             margin-top: 12rem;
+            margin-bottom: 4rem;
+            gap: 3rem;
         }
 
         #about-me-intro {
             width: fit-content;
+            justify-content: center;
+            margin-bottom: 2rem;
         }
 
         #hero {
             max-width: none;
-            width: 30vw;
-            height: 50vh;
+            width: 25rem;
+            height: 40rem;
+            margin-bottom: 0;
+            margin-right: 3rem;
+
+            // fade lengths
+            --top-fade: 120px;
+            --bottom-fade: 120px;
+            --left-fade: 70px;
+            --right-fade: 120px;
+
+
+            -webkit-mask-image: 
+            linear-gradient(to bottom,
+                transparent 0,
+                #000 var(--top-fade),
+                #000 calc(100% - var(--bottom-fade)),
+                transparent 100%
+            ),
+            linear-gradient(to right,
+                transparent 0,
+                #000 var(--left-fade),
+                #000 calc(100% - var(--right-fade)),
+                transparent 100%
+            );
+            -webkit-mask-composite: destination-in;
+            mask-composite: intersect;
+
+            mask-image: 
+            linear-gradient(to bottom,
+                transparent 0,
+                #000 var(--top-fade),
+                #000 calc(100% - var(--bottom-fade)),
+                transparent 100%
+            ),
+            linear-gradient(to right,
+                transparent 0,
+                #000 var(--left-fade),
+                #000 calc(100% - var(--right-fade)),
+                transparent 100%
+            );
+            mask-composite: intersect;
+        }
+
+        #about-me-seperator {
+            display: flex;
+            align-items: center;
+        }
+
+        .seperator {
+            height: 60%;
+            width: 0.2rem;
+            border-radius: 2rem;
+        }
+
+        #about-me-skills, #about-me-experience {
+            width: 80%;
         }
 
         #about-me-tags {

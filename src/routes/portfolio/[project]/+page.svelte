@@ -44,7 +44,7 @@
 			<Reveal>
 			{#if data.project.url}
 				<div class="gradient-background main-btn project-url">
-					<a class="main-btn" href={data.project.url}>give it a try</a>
+					<a class="main-btn" target="_blank" href={data.project.url}>give it a try</a>
 				</div>
 			{/if}
 			</Reveal>
@@ -53,7 +53,7 @@
 			<div class="gradient-outline" id="project-description">
 				{@html data.project.description}
 				{#if data.project.url}
-					<a class="gradient-background main-btn project-url" href={data.project.url}>give it a try</a>
+					<a class="gradient-background main-btn project-url" target="_blank" href={data.project.url}>give it a try</a>
 				{/if}
 			</div>
 			</Reveal>
