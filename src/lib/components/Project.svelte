@@ -13,7 +13,7 @@
 <a class="project-listing"  href={"/portfolio/" + project.slug}>
     <div class="project-listing-img-container">
         <Reveal>
-        <img class="project-listing-img" src="img/projects/{project.imgName}" alt={project.name}>
+        <img class="project-listing-img" src="img/projects/{project.slug}/{project.img}" alt={project.name}>
         </Reveal>
     </div>
     {#if $isMobile}
@@ -22,6 +22,11 @@
                 <h2>{project.name}</h2>
             </Reveal>
             <Reveal>
+            <div class="project-listing-description">
+                {project.shortDescription}
+            </div>
+            </Reveal>
+             <Reveal>
             <div class="project-listing-technologies">
                 {#each project.technologies as tech, i}
                     <div class="list-item">
@@ -31,17 +36,15 @@
                 {/each}
             </div>
             </Reveal>
-            <Reveal>
-            <div>
-                {project.description}
-            </div>
-            </Reveal>
         </div>
     {:else}
         <div class="project-listing-text-container">
             <Reveal>
                 <div class="project-listing-text" class:gradient-outline={!$isMobile}>
                     <h2>{project.name}</h2>
+                    <div class="project-listing-description">
+                        {project.shortDescription}
+                    </div>
                     <div class="project-listing-technologies">
                         {#each project.technologies as tech, i}
                             <div class="list-item">
@@ -49,9 +52,6 @@
                                 <span class="list-text">{tech.name}</span>
                             </div>
                         {/each}
-                    </div>
-                    <div>
-                        {project.description}
                     </div>
                 </div>
             </Reveal>
@@ -71,17 +71,33 @@
         text-decoration: none;
     }
 
-    .project-listing-img {
+    .project-listing-img-container {
+        align-items: center;
+        justify-content: center;
+        display: flex;
         width: 100%;
+    }
+
+    .project-listing-img {
         margin-bottom: 0.5rem;
+        max-width: 30rem;
+		max-height: 25rem;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+    }
+
+    .project-listing-description {
+        margin-bottom: 1.5rem;
+        line-height: 1.4em;
     }
 
     .project-listing-technologies {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 0.4rem;
         margin-top: 0.5rem;
-        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
     }
 
     .list-text {
@@ -117,6 +133,10 @@
 
         .project-listing-img-container {
             flex: 1;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .project-listing:nth-of-type(odd) {

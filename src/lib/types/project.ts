@@ -1,10 +1,17 @@
 export interface Project {
     slug: string,
     name: string,
-    description: string,
+    img: string,
+    img2: string,
+    url?: string,
+    duration: string,
     technologies: technology[],
-    imgName: string,
-    url?: string
+    shortDescription: string,
+    description: string,
+    features: string[],
+    implementation: string,
+    learnings: string,
+    additionalImg: string[]
 }
 
 interface technology {

@@ -5,6 +5,7 @@
 
     let emblaApi;
     let options = { loop: true }
+    export let width = '50rem';
 
     function onInit(event) {
         emblaApi = event.detail;
@@ -19,7 +20,7 @@
     }
 </script>
 
-<div class="embla">
+<div class="embla" style={`--embla-width: ${width}`}>
     <div class="embla__viewport"
      use:emblaCarouselSvelte={{ options }}
        onemblaInit={onInit}>
@@ -36,6 +37,7 @@
 
   .embla {
     position: relative;
+    width: calc(100vw - 4rem);
   }
 
   .embla__viewport {
@@ -68,7 +70,7 @@
 
   @media (min-width: 768px) {
     .embla {
-      width: 50rem;
+      width: var(--embla-width);
     }
   }
 

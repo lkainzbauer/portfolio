@@ -17,7 +17,7 @@
 </div>
 
 <Reveal>
-<div class="home-section gradient-outline" id="home-intro">
+<div class="home-section gradient-outline gradient-outline-btn" id="home-intro">
   <p id="home-intro-text">Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
   <a class="gradient-background main-btn" id="home-intro-btn" href="/about-me">about me</a>
 </div>
@@ -35,7 +35,7 @@
           <!-- svelte-ignore a11y_click_events_have_key_events -->
           <!-- svelte-ignore a11y_no_static_element_interactions -->
           <a class="embla__slide"  href={"/portfolio/" + proj.slug}>
-            <img class="home-project-img" src="img/projects/{proj.imgName}" alt={proj.name}>
+            <img class="home-project-img" src="img/projects/{proj.slug}/{proj.img}" alt={proj.name}>
           </a>
         {/each}
       </Carousel>
@@ -122,8 +122,17 @@
     align-items: center;
   }
 
-  .home-project-img {
+  .home-project-content {
     width: 100%;
+    margin-top: 2rem;
+  }
+
+  .home-project-img {
+    max-width: 45rem;
+		max-height: 30rem;
+		width: auto;
+		height: auto;
+		object-fit: contain;
   }
 
   .home-project-btn {
@@ -146,6 +155,10 @@
   }
 
   @media (min-width: 768px) {
+
+    .embla {
+      width: 30rem;
+    }
     #home-heading {
       margin: 2rem 0 8rem 0;
     }
@@ -166,6 +179,7 @@
       display: flex;
       align-items: center;
       gap: 4rem;
+      margin-top: 3rem;
     }
 
     #home-project-info {

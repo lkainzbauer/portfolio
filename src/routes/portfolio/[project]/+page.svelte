@@ -4,6 +4,8 @@
 	import { goto } from '$app/navigation';
 	import Reveal from '$lib/components/Reveal.svelte';
 	import { isMobile } from "$lib/stores/layout";
+	import Carousel from '$lib/components/Carousel.svelte';
+	import { projects } from '$lib/data/projects';
 
 	let { data }: PageProps = $props();
 	
@@ -12,34 +14,47 @@
 	}
 </script>
 
+{#if $isMobile}
 <Reveal>
 <h1 id="project-heading">{data.project.name}</h1>
 </Reveal>
+{/if}
 <Reveal>
 <button onclick={() => goBack()} id="back-btn">
 	<Icon icon="mdi:arrow-back"></Icon>
 	<span>all projects</span>
 </button>
 </Reveal>
-<div class="project-section">
+<div class="project-section" id="project-intro">
 	<Reveal>
-	<img class="project-img" src="/img/projects/{data.project.imgName}" alt={data.project.name}>
+	<img class="project-img" src="/img/projects/{data.project.slug}/{data.project.img}" alt={data.project.name}>
 	</Reveal>
 	<Reveal>
 	<div class="project-info">
+		{#if !$isMobile}
 		<Reveal>
-		<div class="project-technologies">
-			{#each data.project.technologies as tech, i}
-				<div class="list-item">
-					<Icon icon={tech.icon} style="width: '1.3rem'; height:1.3rem"/>
-					<span class="list-text">{tech.name}</span>
-				</div>
-			{/each}
-		</div>
+			<h1 id="project-heading">{data.project.name}</h1>
+		</Reveal>
+		{/if}
+		<Reveal>
+			<div id="project-duration">
+				<Icon icon="tabler:clock-filled" style="width: 1.3rem; height: 1.3rem"/>
+				<div>{data.project.duration}</div>
+			</div>
 		</Reveal>
 		{#if $isMobile}
 			<Reveal>
-			<div class="gradient-outline" id="project-description">{@html data.project.description}</div>
+			<div class="project-technologies">
+				{#each data.project.technologies as tech, i}
+					<div class="list-item">
+						<Icon icon={tech.icon}/>
+						<span class="list-text">{tech.name}</span>
+					</div>
+				{/each}
+			</div>
+			</Reveal>
+			<Reveal>
+			<div class="gradient-outline" id="project-short-description">{@html data.project.shortDescription}</div>
 			</Reveal>
 			<Reveal>
 			{#if data.project.url}
@@ -50,23 +65,99 @@
 			</Reveal>
 		{:else}
 			<Reveal>
-			<div class="gradient-outline" id="project-description">
-				{@html data.project.description}
+			<div class="gradient-outline gradient-outline-btn" id="project-short-description">
+				{@html data.project.shortDescription}
 				{#if data.project.url}
 					<a class="gradient-background main-btn project-url" target="_blank" href={data.project.url}>give it a try</a>
 				{/if}
+			</div>
+			</Reveal>
+			<Reveal>
+			<div class="project-technologies">
+				{#each data.project.technologies as tech, i}
+					<div class="list-item">
+						<Icon icon={tech.icon}/>
+						<span class="list-text">{tech.name}</span>
+					</div>
+				{/each}
 			</div>
 			</Reveal>
 		{/if}
 	</div>
 	</Reveal>
 </div>
+<Reveal>
+<div id="project-description-container" class="project-section">
+	<div id="project-seperator">
+		<div class="seperator gradient-background"></div>
+	</div>
+	<div id=project-description>
+		{@html data.project.description}
+	</div>
+</div>
+</Reveal>
+<div class="project-section" id="project-key-facts-container">
+	<div id="project-key-facts">
+		<Reveal>
+			<h2 class="heading-underlined project-heading"><span class="heading-light">Key</span> Features</h2>
+		</Reveal>
+		<Reveal>
+			{#each data.project.features as feat, i}
+				<div class="project-feature">{feat}</div>
+			{/each}
+		</Reveal>
+	</div>
+	<Reveal>
+	<img class="project-img text-img" src="/img/projects/{data.project.slug}/{data.project.img2}" alt={data.project.name}>
+	</Reveal>
+</div>
+<div class="project-section" id="project-implementation">
+	<Reveal>
+		<h2 class="heading-underlined project-heading"> Implementation</h2>
+	</Reveal>
+	<Reveal>
+	<div class="gradient-outline" id="project-implementation-text">
+		{@html data.project.implementation}
+	</div>
+	</Reveal>
+</div>
+<div class="project-section" id="project-learnings">
+	<div>
+	<Reveal>
+		<h2 class="heading-underlined project-heading"><span class="heading-light">My</span> Learnings</h2>
+	</Reveal>
+	<Reveal>
+		{@html data.project.learnings}
+	</Reveal>
+	</div>
+	<div id="project-additional-img">
+	<Reveal>
+      <Carousel width="35rem">
+        {#each data.project.additionalImg as img, i}
+          <div class="embla__slide">
+            <img class="project-carousel-img" src="/img/projects/{data.project.slug}/{img}" alt={data.project.name}>
+		  </div>
+        {/each}
+      </Carousel>
+    </Reveal>
+	</div>
+</div>
 
 <style lang="scss">
 	@use '/src/styles/index' as *;
 
 	#project-heading {
-		margin-bottom: 0;
+		font-size: 4em;
+		margin-top: 0;
+	}
+
+	#project-duration {
+		margin: 1.5rem 0;
+		color: $text-clr;
+		font-weight: 600;
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
 	}
 
 	.project-section {
@@ -80,14 +171,35 @@
 		}
     }
 
-	#project-description {
+	#project-short-description {
 		margin-bottom: 2rem;
+		font-size: 1.2em;
+		line-height: 1.4em;
+			a {
+				font-size: 0.9em;
+			}
 	}
 
 	.project-img {
-        width: 120%;
-		margin-left: -10%;
+        max-width: 25rem;
+		max-height: 25rem;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+		margin: 0 4rem;
     }
+
+	.project-carousel-img {
+ 		max-width: 30rem;
+		max-height: 25rem;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+	}
+
+	.text-img {
+		margin-top: 3rem;
+	}
 
 	.project-info {
 		display: flex;
@@ -98,9 +210,10 @@
 	.project-technologies {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        margin-top: 0.5rem;
+        gap: 0.4rem;
+        margin-top: 2rem;
         margin-bottom: 1.5rem;
+		flex-wrap: wrap;
     }
 
     .list-text {
@@ -130,12 +243,80 @@
 		align-items: center;
 		gap: 0.3rem;
 		font-weight: bold;
-		margin-bottom: 3rem;
 		cursor: pointer;
 
 		&:hover {
 			color: $accent1;
 		}
+	}
+
+	#project-description-container {
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		justify-content: center;
+		gap: 1.5rem;
+		margin: 4rem 0;
+	}
+
+	#project-description {
+		line-height: 1.4em;
+	}
+
+	#project-seperator {
+		display: flex;
+		align-items: center;
+    }
+
+	.seperator {
+		height: 100%;
+		width: 0.2rem;
+		border-radius: 2rem;
+	}
+
+	.project-heading {
+		margin-bottom: 1rem;
+	}
+
+	.project-feature {
+		margin: 1rem 0;
+
+		&::before {
+			display: inline-block;
+			content: '';
+			-webkit-border-radius: 0.375rem;
+			border-radius: 0.375rem;
+			height: 0.6rem;
+			width: 0.6rem;
+			margin-right: 0.5rem;
+			background-color: $accent1;
+		}
+	}
+
+	#project-key-facts {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#project-implementation {
+		margin: 4rem 0;
+	}
+
+	#project-implementation-text {
+		line-height: 1.4em;
+	}
+
+	.embla__slide {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#project-additional-img {
+		margin-top: 4rem;
 	}
 
 	@media (min-width: 768px) {
@@ -148,16 +329,28 @@
 			flex-direction: row;
 		}
 
-		.project-img {
-			width: 35rem;
-			margin: 0;
+		.text-img {
+			margin-top: 0;
+		}
+
+		#project-duration {
+			color: $bg;
+			margin-top: 0;
+		}
+
+		#project-short-description {
+			margin-bottom: 3rem;
+		}
+
+		.project-technologies {
+			margin-top: 0.5rem;
 		}
 
 		.project-info {
 			align-items: flex-start;
 		}
 
-		#project-description {
+		#project-short-description {
 			position: relative;
 		}
 
@@ -165,6 +358,34 @@
 			position: absolute;
 			bottom: -1.5rem;
 			right: 1rem;
+		}
+
+		#project-description {
+			font-size: 1.1em;
+			width: 70%;
+		}
+
+		#project-key-facts {
+			align-items: flex-start;
+		}
+
+		.project-feature {
+			font-size: 1.1em;
+		}
+
+		#project-implementation {
+			flex-direction: column;
+			width: 80%;
+			font-size: 1.1em;
+		}
+
+		#project-learnings {
+			flex-direction: row-reverse;
+			gap: 4rem;
+		}
+
+		#project-additional-img {
+			margin-top: 0;
 		}
 	}
 </style>

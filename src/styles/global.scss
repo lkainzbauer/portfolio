@@ -178,4 +178,8 @@
         --border-thickness: 0.35rem;
         --padding-size: 2rem;
     }
+
+    :global(.gradient-outline-btn) {
+        padding-bottom: calc(var(--padding-size) + 0.5rem);
+    }
 }

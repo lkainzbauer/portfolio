@@ -22,9 +22,9 @@ export const technologies: Skill[] = [
         icon: "file-icons:d3"
     },
     {
-        name: "Node.js",
+        name: "NestJS",
         iconType: "iconify",
-        icon: "mdi:nodejs"
+        icon: "file-icons:nestjs"
     },
     {
         name: "React",
