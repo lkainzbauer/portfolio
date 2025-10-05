@@ -5,7 +5,7 @@
 
     let emblaApi;
     let options = { loop: true }
-    export let width = '50rem';
+    export let width = '40rem';
 
     function onInit(event) {
         emblaApi = event.detail;

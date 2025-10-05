@@ -98,6 +98,7 @@
 </Reveal>
 <div class="project-section" id="project-key-facts-container">
 	<div id="project-key-facts">
+		{#if $isMobile}
 		<Reveal>
 			<h2 class="heading-underlined project-heading"><span class="heading-light">Key</span> Features</h2>
 		</Reveal>
@@ -106,6 +107,14 @@
 				<div class="project-feature">{feat}</div>
 			{/each}
 		</Reveal>
+		{:else}
+		<Reveal>
+			<h2 class="heading-underlined project-heading"><span class="heading-light">Key</span> Features</h2>
+			{#each data.project.features as feat, i}
+				<div class="project-feature">{feat}</div>
+			{/each}
+		</Reveal>
+		{/if}
 	</div>
 	<Reveal>
 	<img class="project-img text-img" src="/img/projects/{data.project.slug}/{data.project.img2}" alt={data.project.name}>

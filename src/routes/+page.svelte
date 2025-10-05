@@ -128,7 +128,7 @@
   }
 
   .home-project-img {
-    max-width: 45rem;
+    max-width: 40rem;
 		max-height: 30rem;
 		width: auto;
 		height: auto;
