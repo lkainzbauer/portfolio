@@ -128,8 +128,8 @@
   }
 
   .home-project-img {
-    max-width: 40rem;
-		max-height: 30rem;
+    max-width: 70vw;
+		max-height: 20rem;
 		width: auto;
 		height: auto;
 		object-fit: contain;
@@ -180,6 +180,11 @@
       align-items: center;
       gap: 4rem;
       margin-top: 3rem;
+    }
+
+    .home-project-img {
+      max-width: 35rem;
+      max-height: 30rem;
     }
 
     #home-project-info {

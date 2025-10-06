@@ -79,9 +79,9 @@
     }
 
     .project-listing-img {
-        margin-bottom: 0.5rem;
-        max-width: 30rem;
-		max-height: 25rem;
+        margin-bottom: 1rem;
+        max-width: 80vw;
+		max-height: 20rem;
 		width: auto;
 		height: auto;
 		object-fit: contain;
@@ -137,6 +137,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .project-listing-img {
+            max-width: 30rem;
+            max-height: 25rem;
         }
 
         .project-listing:nth-of-type(odd) {
