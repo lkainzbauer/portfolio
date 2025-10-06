@@ -5,7 +5,7 @@ export const projects: Project[] = [
     slug: "bevry",
     name: "Bevry",
     img: "bevry_detail.png",
-    img2: "bevry_detail.png",
+    img2: "bevry_screens.png",
     url: "https://www.bevry.app/",
     duration: "Oct 23 – Jun 24",
     technologies: [
@@ -35,13 +35,13 @@ export const projects: Project[] = [
     ],
     implementation: "The project followed an agile development approach, coordinated through Jira and GitLab. The frontend was built with Vue and Vuetify to ensure a responsive, mobile-first experience. Pinia was used for state management, providing a clean and reactive data flow between components. On the backend, we implemented NestJS with TypeORM for ORM-based database communication and Swagger for documentation and testing. Authentication and authorization were realized with JWT and bcrypt, ensuring a secure user environment.\nI contributed to both backend and frontend development. My backend responsibilities included user management, recipe and interaction handling, and image processing. On the frontend, I focused on implementing the mini-game logic and ensuring smooth integration with the backend services. Visual consistency was achieved through close collaboration with our design team in Figma, Illustrator, and InDesign.",
     learnings: "Bevry strengthened my understanding of full-stack application development, particularly the integration of secure APIs with interactive, user-centered frontends. I improved my skills in authentication design, error handling, and collaborative coding practices. Beyond technical aspects, I learned to balance usability, visual appeal, and feature scope in a team setting. The process of integrating gamification and multimedia into a social app also gave me valuable insight into user engagement and community-driven design.",
-    additionalImg: ["bevry_detail.png", "bevry_detail.png"]
+    additionalImg: ["bevry_games.png", "bevry_moodboard.png", "bevry_group2.png", "bevry_logo.png", "bevry_flyer.png", "bevry_screens2.png", "bevry_group1.png", "bevry_colors.png"]
   },
   {
     slug: "amity",
     name: "Amity",
     img: "amity_calendar.png",
-    img2: "amity_calendar.png",
+    img2: "amity_screens.png",
     url: "https://www.amity-friends.app/",
     duration: "Oct 24 – Jan 25",
     technologies: [
@@ -68,13 +68,13 @@ export const projects: Project[] = [
     ],
     implementation: "The frontend was built with Angular, supported by Angular Material and Bootstrap for a consistent design system. As a PWA, Amity integrates installation prompts, offline capabilities, and real-time push notifications. The backend relied on NestJS with TypeORM and Swagger for structured development and maintainability. JWT and bcrypt provided authentication and security.\nMy key responsibilities included backend architecture design and implementation for user management, event creation, and prediction logic. On the frontend, I developed the calendar and event management views, ensuring seamless interaction between user actions and the backend services. The team used Figma for interface design, while GitLab and Jira supported our agile workflow and version control.",
     learnings: "Amity allowed me to refine my approach to building cohesive full-stack systems where design and functionality go hand in hand. I learned to anticipate user needs, build reliable authentication flows, and design for accessibility. The project also emphasized communication and teaching. Our small team frequently exchanged knowledge and supported each other in mastering new tools. The experience strengthened both my technical expertise and my collaborative mindset.",
-    additionalImg: ["amity_calendar.png", "amity_calendar.png"]
+    additionalImg: ["amity_screens2.png", "amity_logo.png", "amity_flyer.png", "amity_screens3.png", "amity_sticker.png", "amity_team.png"]
   },
   {
     slug: "time-parabox",
     name: "Time Parabox",
     img: "time-parabox_compass.png",
-    img2: "time-parabox_compass.png",
+    img2: "time-parabox_screens.png",
     url: "",
     duration: "Oct 24 – Jan 25",
     technologies: [
@@ -99,21 +99,21 @@ export const projects: Project[] = [
     ],
     implementation: "Development involved close coordination between hardware, software, and storytelling teams. We used Confluence and Figma to plan narrative arcs, interaction design, and puzzle structure. The frontend was developed using React Native and Expo, which enabled fast prototyping and deployment across mobile platforms. Bluetooth Low Energy was implemented for communication between the app and the microcontroller-based hardware, transmitting data such as button presses and sensor states.\nMy contribution focused on game design and storytelling: writing narrative sequences, designing puzzles, and ensuring consistency between the physical and digital elements. I also implemented core frontend logic for game progression, built 3D models in Blender, and handled 3D printing and assembly. The combination of creative and technical tasks made this project particularly enriching.",
     learnings: "Time Parabox taught me how to bridge hardware and software to create cohesive interactive experiences. I learned to manage communication across disciplines, integrate sensor data in real time, and maintain narrative coherence in a complex hybrid system. The project deepened my understanding of game logic, prototyping under pressure, and large-scale collaboration. It reinforced the importance of design thinking, planning, and iterative testing when bringing creative ideas to life.",
-    additionalImg: ["time-parabox_compass.png", "time-parabox_compass.png"]
+    additionalImg: ["time-parabox_screens2.png", "time-parabox_flyer.png", "time-parabox_planning.png", "time-parabox_building.png", "time-parabox_storyline.png", "time-parabox_results.png"]
   },
   {
     slug: "print-to-mobile",
-    name: "Print to Mobile",
+    name: "Bean to Cup",
     img: "print-to-mobile_cappucino.png",
-    img2: "print-to-mobile_cappucino.png",
+    img2: "print-to-mobile_home.png",
     url: "https://it231505-21822.php.fhstp.cc/",
     duration: "Sep 23",
     technologies: [
       { icon: "akar-icons:angular-fill", name: "Angular" },
       { icon: "", name: "Hammer.js" }
     ],
-    shortDescription: "Print to Mobile is a mobile-first web app that connects coffee lovers with personalized brewing inspiration. By scanning a QR code on their purchased beans, users unlock tailored recipes that make every cup unique.",
-    description: "Print to Mobile was my first Master’s project and a concise exploration of how physical and digital media can complement each other. The goal was to create a mobile-first web app that provides personalized coffee recipes by scanning QR codes printed on coffee bean packages. Each scan leads to a curated page with brewing instructions tailored to the beans’ characteristics such as roast and aroma.\nThe concept emphasizes simplicity, design clarity, and usability. It targets a hip, quality-oriented audience that appreciates convenience without sacrificing individuality or craftsmanship.",
+    shortDescription: "Bean to Cup is a mobile-first web app that connects coffee lovers with personalized brewing inspiration. By scanning a QR code on their purchased beans, users unlock tailored recipes that make every cup unique.",
+    description: "Bean to Cup was my first Master’s project and a concise exploration of how physical and digital media can complement each other. The goal was to create a mobile-first web app that provides personalized coffee recipes by scanning QR codes printed on coffee bean packages. Each scan leads to a curated page with brewing instructions tailored to the beans’ characteristics such as roast and aroma.\nThe concept emphasizes simplicity, design clarity, and usability. It targets a hip, quality-oriented audience that appreciates convenience without sacrificing individuality or craftsmanship.",
     features: [
       "Scan QR codes to access recipe pages",
       "Display recipe suggestions for specific coffee beans",
@@ -122,14 +122,14 @@ export const projects: Project[] = [
       "Use swipe gestures for smooth navigation"
     ],
     implementation: "The frontend was built in Angular with modular components for reusability and scalability. Hammer.js was used to implement intuitive swipe gestures, providing an app-like experience within the browser. The design was optimized for mobile screens with a focus on legibility and minimalism. This short but focused project was completed within a few weeks and served as an ideal introduction to full-cycle web development from ideation to delivery.",
-    learnings: "Print to Mobile taught me the fundamentals of component-based architecture and how to combine design and technology efficiently in short development cycles. I learned to use QR code technology for user-specific access and to design clean, mobile-first navigation. The project also sharpened my sense for minimal UI design and usability under real-world constraints.",
-    additionalImg: ["print-to-mobile_cappucino.png", "print-to-mobile_cappucino.png"]
+    learnings: "Bean to Cup taught me the fundamentals of component-based architecture and how to combine design and technology efficiently in short development cycles. I learned to use QR code technology for user-specific access and to design clean, mobile-first navigation. The project also sharpened my sense for minimal UI design and usability under real-world constraints.",
+    additionalImg: ["print-to-mobile_qrcode.png", "print-to-mobile_aeropress.png", "print-to-mobile_instructions.png"]
   },
   {
     slug: "smart-communities",
     name: "Smart Communities – IoT4LAC",
     img: "smart-communities.png",
-    img2: "smart-communities.png",
+    img2: "smart-communities_plugin.png",
     url: "",
     duration: "Apr 24 – Jun 24",
     technologies: [
@@ -149,13 +149,13 @@ export const projects: Project[] = [
     ],
     implementation: "Initial low-fidelity prototypes were designed in Figma to explore different layout and interaction strategies. The final implementation used React and D3.js to ensure flexibility and visual expressiveness within Grafana. The plugin was designed to blend seamlessly into existing dashboards, maintaining stylistic and functional consistency.\nI was responsible for the visualization logic, data binding, and interaction design, ensuring smooth user workflows. A usability study was conducted using six task-based scenarios to evaluate the clarity and effectiveness of the design. Results were analyzed and presented in a structured evaluation report, providing actionable insights for future iterations.",
     learnings: "The project expanded my understanding of visualization usability and user-centered research. I learned to design for clarity and accessibility while working within an existing framework. Conducting real user tests offered valuable insight into how people engage with data tools, and how small changes can significantly improve interpretability and trust.",
-    additionalImg: ["smart-communities.png", "smart-communities.png"]
+    additionalImg: ["smart-communities_dashboard1.png", "smart-communities_dashboard2.png", "smart-communities_dashboard3.png", "smart-communities_usertesting.png"]
   },
   {
     slug: "echo-chamber",
     name: "Echo Chamber",
     img: "echo-chamber.png",
-    img2: "echo-chamber.png",
+    img2: "echo-chamber_drawings.png",
     url: "https://www.youtube.com/watch?v=plosh-p8mGA",
     duration: "Jun 24",
     technologies: [
@@ -174,6 +174,6 @@ export const projects: Project[] = [
     ],
     implementation: "The story and visual design were planned in Figma before building the 3D environment in Unity. Posters and wall art were created using a combination of AI-generated imagery (Adobe Firefly) and hand-drawn illustrations in Photoshop. The scene used low-poly models and carefully designed lighting to evoke both innocence and unease. Object placement and color palette were meticulously tuned to guide the player’s emotional progression through the space.",
     learnings: "Echo Chamber was a powerful exercise in non-verbal storytelling and narrative design. I learned how to construct emotional resonance using composition, lighting, and environmental clues. Beyond technical skills in Unity and asset design, I developed a deeper understanding of how visual storytelling can convey complex psychological narratives in minimalistic settings.",
-    additionalImg: ["echo-chamber.png", "echo-chamber.png"]
+    additionalImg: ["echo-chamber_drawings-closeup.png", "echo-chamber_hints.png", "echo-chamber_altar.png"]
   }
 ]

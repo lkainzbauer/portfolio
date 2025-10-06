@@ -117,7 +117,7 @@
 		{/if}
 	</div>
 	<Reveal>
-	<img class="project-img text-img" src="/img/projects/{data.project.slug}/{data.project.img2}" alt={data.project.name}>
+	<img class="text-img" src="/img/projects/{data.project.slug}/{data.project.img2}" alt={data.project.name}>
 	</Reveal>
 </div>
 <div class="project-section" id="project-implementation">
@@ -206,6 +206,11 @@
 	}
 
 	.text-img {
+		max-width: 80vw;
+		max-height: 22rem;
+		width: auto;
+		height: auto;
+		object-fit: contain;
 		margin-top: 3rem;
 	}
 
@@ -343,6 +348,9 @@
 
 		.text-img {
 			margin-top: 0;
+			max-width: 30rem;
+			max-height: 25rem;
+			margin: 0 2rem;
 		}
 
 		#project-duration {
