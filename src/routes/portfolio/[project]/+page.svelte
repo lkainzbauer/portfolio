@@ -131,7 +131,7 @@
 	</Reveal>
 </div>
 <div class="project-section" id="project-learnings">
-	<div>
+	<div id="project-learnings-text">
 	<Reveal>
 		<h2 class="heading-underlined project-heading"><span class="heading-light">My</span> Learnings</h2>
 	</Reveal>
@@ -190,16 +190,15 @@
 	}
 
 	.project-img {
-        max-width: 25rem;
-		max-height: 25rem;
+        max-width: 80vw;
+		max-height: 22rem;
 		width: auto;
 		height: auto;
 		object-fit: contain;
-		margin: 0 4rem;
     }
 
 	.project-carousel-img {
- 		max-width: 30rem;
+ 		max-width: 80vw;
 		max-height: 25rem;
 		width: auto;
 		height: auto;
@@ -317,6 +316,10 @@
 		line-height: 1.4em;
 	}
 
+	#project-learnings-text {
+		margin: 0 2rem;
+	}
+
 	.embla__slide {
 		display: flex;
 		flex-direction: column;
@@ -380,6 +383,17 @@
 
 		.project-feature {
 			font-size: 1.1em;
+		}
+
+		.project-img {
+			max-width: 25rem;
+			max-height: 25rem;
+			margin: 0 4rem;
+		}
+
+		.project-carousel-img {
+			max-width: 30rem;
+			max-height: 25rem;
 		}
 
 		#project-implementation {

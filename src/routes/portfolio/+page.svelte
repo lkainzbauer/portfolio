@@ -13,7 +13,8 @@
 <div id="portfolio-placeholder">
     <Reveal>
     <div class="portfolio-section gradient-outline" id="portfolio-intro">
-        Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.
+        <div>Across my studies and collaborative work, I have developed a diverse range of projects that combine solid backend architecture, intuitive frontend design and user-centered thinking.</div>
+        <div>Below is a selection of projects that best illustrate my range. From developing full-stack applications in Angular, Vue, and NestJS to creating sensor-based games, data visualization tools, and interactive storytelling environments.</div>
     </div>
     </Reveal>
     <div class="portfolio-section">
@@ -37,6 +38,12 @@
 
     #portfolio-intro {
         margin-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        line-height: 1.3em;
     }
 
     .seperator {
