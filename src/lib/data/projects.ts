@@ -10,17 +10,16 @@ export const projects: Project[] = [
     duration: "Oct 23 – Jun 24",
     technologies: [
       { icon: "ri:vuejs-fill", name: "Vue" },
-      { icon: "", name: "Pinia" },
-      { icon: "", name: "TypeScript" },
+      { icon: "simple-icons:pinia", name: "Pinia" },
       { icon: "file-icons:nestjs", name: "NestJS" },
-      { icon: "", name: "TypeORM" },
+      { icon: "simple-icons:typeorm", name: "TypeORM" },
       { icon: "lineicons:mysql", name: "MySQL" },
-      { icon: "", name: "GitLab" },
+      { icon: "ri:gitlab-fill", name: "GitLab" },
       { icon: "mdi:jira", name: "Jira" },
-      { icon: "", name: "Confluence" },
+      { icon: "cbi:confluence", name: "Confluence" },
       { icon: "solar:figma-linear", name: "Figma" },
-      { icon: "", name: "Adobe Illustrator" },
-      { icon: "", name: "Adobe InDesign" }
+      { icon: "streamline-logos:adobe-illustrator-logo-block", name: "Adobe Illustrator" },
+      { icon: "streamline-logos:adobe-indesign-logo-block", name: "Adobe InDesign" }
     ],
     shortDescription: "Bevry is a web application designed for cocktail enthusiasts who love to experiment, get inspired, and share their creations. It combines the joy of socializing with the creativity of mixology, encouraging users to explore, connect, and have fun while crafting unique drinks.",
     description: "Bevry was created as a collaborative student project that aimed to merge community-building with creativity in mixology. Developed in a team of five, we set out to design a platform where cocktail lovers could find inspiration, experiment with new combinations, and share their experiences with others. The concept revolved around building an energetic, playful, and modern brand identity that would appeal to both newcomers and experienced mixologists.\nThe app allowed users to discover recipes, connect with others, and participate in small interactive experiences such as mini-games that translated social enjoyment into both digital and real-life activities. Our focus was not only on functionality but also on creating an environment that felt lively, inclusive, and genuinely fun to use.",
@@ -47,13 +46,12 @@ export const projects: Project[] = [
     duration: "Oct 24 – Jan 25",
     technologies: [
       { icon: "akar-icons:angular-fill", name: "Angular" },
-      { icon: "", name: "Angular Material" },
-      { icon: "", name: "Bootstrap" },
-      { icon: "", name: "TypeScript" },
+      { icon: "devicon-plain:angularmaterial", name: "Angular Material" },
+      { icon: "mdi:bootstrap", name: "Bootstrap" },
       { icon: "file-icons:nestjs", name: "NestJS" },
-      { icon: "", name: "TypeORM" },
+      { icon: "simple-icons:typeorm", name: "TypeORM" },
       { icon: "lineicons:mysql", name: "MySQL" },
-      { icon: "", name: "GitLab" },
+      { icon: "ri:gitlab-fill", name: "GitLab" },
       { icon: "mdi:jira", name: "Jira" },
       { icon: "solar:figma-linear", name: "Figma" }
     ],
@@ -80,14 +78,14 @@ export const projects: Project[] = [
     url: "",
     duration: "Oct 24 – Jan 25",
     technologies: [
-      { icon: "", name: "React Native" },
-      { icon: "", name: "Expo" },
-      { icon: "", name: "Bluetooth Low Energy" },
-      { icon: "", name: "Blender" },
+      { icon: "mdi:react", name: "React Native" },
+      { icon: "simple-icons:expo", name: "Expo" },
+      { icon: "tabler:bluetooth", name: "Bluetooth Low Energy" },
+      { icon: "simple-icons:blender", name: "Blender" },
       { icon: "solar:figma-linear", name: "Figma" },
-      { icon: "", name: "GitHub" },
+      { icon: "mdi:github", name: "GitHub" },
       { icon: "mdi:jira", name: "Jira" },
-      { icon: "", name: "Confluence" }
+      { icon: "cbi:confluence", name: "Confluence" }
     ],
     shortDescription: "Time Parabox is a hybrid puzzle and escape game that combines a physical box equipped with sensors and a mobile app. Players are guided through an adventure across different time periods, solving challenges that blend tactile and digital interaction.",
     description: "Time Parabox was an ambitious interdisciplinary project that merged physical computing with mobile interaction. Developed by a group of ten students, the project aimed to create a hybrid escape-room experience where storytelling, hardware, and software converge. Players interact with a physical puzzle box connected via Bluetooth to a React Native mobile app, guiding them through multiple historical time periods.\nThe narrative drives players through challenges that combine real-world tactile engagement with digital logic and feedback. Each puzzle requires teamwork, observation, and curiosity, mirroring the sense of adventure found in classic escape games while leveraging modern technology for immersion.",
@@ -135,10 +133,10 @@ export const projects: Project[] = [
     url: "",
     duration: "Apr 24 – Jun 24",
     technologies: [
-      { icon: "", name: "Grafana" },
+      { icon: "devicon-plain:grafana", name: "Grafana" },
       { icon: "mdi:react", name: "React" },
       { icon: "file-icons:d3", name: "D3.js" },
-      { icon: "", name: "GitHub" }
+      { icon: "mdi:github", name: "GitHub" }
     ],
     shortDescription: "Smart Communities – IoT4LAC is a research project focused on visualizing sensor data for local municipalities. It delivers Grafana plugins that turns complex IoT data into clear, meaningful insights through an interactive dashboard.",
     description: "This research-driven project was part of the course “Tun, Forschen, Gründen” (“Do, Research, Found”) and focused on developing a data visualization plugin for Grafana. The goal was to provide local municipalities in Lower Austria with an intuitive dashboard to analyze historical IoT sensor data. By combining multiple data attributes in one visualization, the plugin helped uncover relationships between environmental or infrastructural variables.\nThe project bridged data visualization, usability testing, and civic technology. It aimed to empower non-experts (city employees and planners) to interpret complex datasets through clear, interactive visuals.",
@@ -161,9 +159,9 @@ export const projects: Project[] = [
     url: "https://www.youtube.com/watch?v=plosh-p8mGA",
     duration: "Jun 24",
     technologies: [
-      { icon: "", name: "Unity" },
-      { icon: "", name: "Adobe Photoshop" },
-      { icon: "", name: "Adobe Firefly" },
+      { icon: "mdi:unity", name: "Unity" },
+      { icon: "streamline-logos:adobe-photoshop-logo-block", name: "Adobe Photoshop" },
+      { icon: "streamline:adobe-solid", name: "Adobe Firefly" },
       { icon: "solar:figma-linear", name: "Figma" }
     ],
     shortDescription: "Echo Chamber is an immersive storytelling experience built in Unity. It tells the haunting story of a missing girl entirely through the objects, light, and atmosphere of a single room - without dialogue or narration.",
