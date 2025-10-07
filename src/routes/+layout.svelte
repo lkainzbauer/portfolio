@@ -7,8 +7,9 @@
 	import { afterNavigate } from '$app/navigation';
 	import Nav from '$lib/components/Nav.svelte';
 	import { isMobile } from '$lib/stores/layout';
+	import type { LayoutProps } from './$types';
 
-	let { children } = $props();
+	let { data, children }: LayoutProps = $props();
 
 	let path = $state('/');
 
@@ -26,6 +27,15 @@
 	});
 
 </script>
+
+
+<svelte:head>
+  {#each data.projects as project}
+    <link rel="preload" as="image" href="/img/{project.slug}/{project.img}" />
+	<link rel="preload" as="image" href="/img/{project.slug}/{project.img2}" />
+	<link rel="preload" as="image" href="/img/{project.slug}/{project.additionalImg[0]}" />
+  {/each}
+</svelte:head>
 
 <div id="app">
 
