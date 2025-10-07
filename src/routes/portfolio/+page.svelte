@@ -43,7 +43,8 @@
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        line-height: 1.3em;
+        line-height: 1.4em;
+        font-size: 1.1em;
     }
 
     .seperator {

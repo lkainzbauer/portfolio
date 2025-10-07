@@ -91,7 +91,7 @@
 	<div id="project-seperator">
 		<div class="seperator gradient-background"></div>
 	</div>
-	<div id=project-description>
+	<div class="multiple-paragraphs" id=project-description>
 		{@html data.project.description}
 	</div>
 </div>
@@ -130,18 +130,20 @@
 		<h2 class="heading-underlined project-heading"> Implementation</h2>
 	</Reveal>
 	<Reveal>
-	<div class="gradient-outline" id="project-implementation-text">
+	<div class="gradient-outline multiple-paragraphs" id="project-implementation-text">
 		{@html data.project.implementation}
 	</div>
 	</Reveal>
 </div>
 <div class="project-section" id="project-learnings">
-	<div id="project-learnings-text">
+	<div id="project-learnings-content">
 	<Reveal>
 		<h2 class="heading-underlined project-heading"><span class="heading-light">My</span> Learnings</h2>
 	</Reveal>
 	<Reveal>
-		{@html data.project.learnings}
+		<div class="multiple-paragraphs" id="project-learnings-text">
+			{@html data.project.learnings}
+		</div>
 	</Reveal>
 	</div>
 	<div id="project-additional-img">
@@ -326,8 +328,20 @@
 		line-height: 1.4em;
 	}
 
-	#project-learnings-text {
+	.multiple-paragraphs {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		text-align: justify;
+	}
+
+	#project-learnings-content {
 		margin: 0 2rem;
+	}
+
+	#project-learnings-text {
+		line-height: 1.4em;
+		font-size: 1.1em;
 	}
 
 	.embla__slide {
@@ -355,7 +369,7 @@
 			margin-top: 0;
 			max-width: 30rem;
 			max-height: 25rem;
-			margin: 0 2rem;
+			margin: 0 3rem;
 		}
 
 		#project-duration {
