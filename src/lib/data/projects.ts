@@ -42,7 +42,7 @@ export const projects: Project[] = [
     name: "Amity",
     img: "amity_calendar.png",
     img2: "amity_screens.png",
-    url: "https://www.amity-friends.app/",
+    url: "https://amity-app.netlify.app/",
     duration: "Oct 24 – Jan 25",
     technologies: [
       { icon: "akar-icons:angular-fill", name: "Angular" },
@@ -129,9 +129,9 @@ export const projects: Project[] = [
     slug: "smart-communities",
     name: "Smart Communities – IoT4LAC",
     img: "smart-communities.png",
-    img2: "smart-communities_plugin.png",
-    url: "",
-    duration: "Apr 24 – Jun 24",
+    img2: "smart-communities_prototype1.png",
+    url: "https://research.ustp.at/projekte/iot4lac-iot-anwendungen-fuer-noe-gemeinden",
+    duration: "Febr 23 – Jun 24",
     technologies: [
       { icon: "devicon-plain:grafana", name: "Grafana" },
       { icon: "mdi:react", name: "React" },
@@ -139,7 +139,7 @@ export const projects: Project[] = [
       { icon: "mdi:github", name: "GitHub" }
     ],
     shortDescription: "Smart Communities – IoT4LAC is a research project focused on visualizing sensor data for local municipalities. It delivers Grafana plugins that turns complex IoT data into clear, meaningful insights through an interactive dashboard.",
-    description: "<div>This research-driven project was part of the course “Tun, Forschen, Gründen” (“Do, Research, Found”) and focused on developing a data visualization plugin for Grafana. The goal was to provide local municipalities in Lower Austria with an intuitive dashboard to analyze historical IoT sensor data. By combining multiple data attributes in one visualization, the plugin helped uncover relationships between environmental or infrastructural variables.</div><div>The project bridged data visualization, usability testing, and civic technology. It aimed to empower non-experts (city employees) to interpret complex datasets through clear, interactive visuals.</div>",
+    description: "<div>I was part of this research project throughout the completion of my bachelor thesis and had the oppportunity to stay on for the remainder of the project. It focused on developing data visualization plugins for Grafana. The goal was to provide local municipalities in Lower Austria with an intuitive dashboard to analyze historical IoT sensor data. By combining multiple visualizations and data attributes, the dashboard helped uncover relationships between environmental or infrastructural variables.</div><div>The project bridged data visualization, usability testing, and civic technology. It aimed to empower non-experts (city employees) to interpret complex datasets through clear, interactive visuals. The results were displayed in the ''Haus der Digitalisierung'' in Tulln.</div>",
     features: [
       "Customizable data visualizations",
       "Attribute selection and filtering",
@@ -147,9 +147,9 @@ export const projects: Project[] = [
       "Explanations and legends for clarity",
       "Structured usability test with defined tasks"
     ],
-    implementation: "Initial low-fidelity prototypes were designed in Figma to explore different layout and interaction strategies. The final implementation used React and D3.js to ensure flexibility within Grafana. The plugin was designed to blend seamlessly into the research project's existing plugins, maintaining stylistic and functional consistency.</div><div>I was responsible for the visualization logic, data binding, and interaction design, ensuring smooth user workflows. A usability study was conducted using six task-based scenarios to evaluate the clarity and effectiveness of the design. Results were analyzed and presented in a structured evaluation report.</div>",
-    learnings: "The project expanded my understanding of visualization usability and user-centered research. I learned to design for clarity and accessibility while working within an existing framework. Conducting real user tests offered valuable insight into how people engage with data tools, and how small changes can significantly improve interpretability and user experience.",
-    additionalImg: ["smart-communities_dashboard1.png", "smart-communities_dashboard2.png", "smart-communities_dashboard3.png", "smart-communities_usertesting.png"]
+    implementation: "Initial sketches with pen and paper were created, followed by low-fidelity and high-fidelity prototypes designed in Adobe XD to explore different layout and interaction strategies. The plugin was designed to blend seamlessly into the research project's existing plugins, maintaining stylistic and functional consistency.</div><div>I was responsible for the dashboard design, visualization logic, data binding, and interaction design, ensuring smooth user workflows. Multiple usability studies were conducted throughout the course of the project using task-based scenarios to evaluate the clarity and effectiveness of the design. Results were analyzed and presented in a structured evaluation report.</div>",
+    learnings: "The project expanded my understanding of visualization, usability and user-centered research. I learned to design for clarity and accessibility while working within an existing framework. Conducting real user tests offered valuable insight into how people engage with data tools, and how small changes can significantly improve interpretability and user experience.",
+    additionalImg: ["smart-communities_prototype2.png", "smart-communities_dashboard1.png", "smart-communities_dashboard2.png", "smart-communities_dashboard3.png"]
   },
   {
     slug: "echo-chamber",
