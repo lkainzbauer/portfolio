@@ -179,6 +179,7 @@
 
     #home-intro-text {
       padding: 0;
+      font-size: 1.1em;
     }
 
     .home-project-content {
