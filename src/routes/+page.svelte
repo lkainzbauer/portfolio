@@ -18,7 +18,10 @@
 
 <Reveal>
 <div class="home-section gradient-outline gradient-outline-btn" id="home-intro">
-  <p id="home-intro-text">Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+  <p id="home-intro-text" class="line-height">
+    <span>My name is Laura and I am a web developer, UI/UX designer and data visualization specialist!</span>
+    <span>I enjoy developing websites and apps that are intuitive to use and fun to interact with. My workflow ranges from identifying user needs to creating prototypes, implementing designs, and finally testing and evaluating the results.</span>
+  </p>
   <a class="gradient-background main-btn" id="home-intro-btn" href="/about-me">about me</a>
 </div>
 </Reveal>
@@ -40,9 +43,9 @@
         {/each}
       </Carousel>
     </Reveal>
-    <div id="home-project-info">
+    <div id="home-project-info" class="line-height">
       <Reveal>
-      <p>Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+      <p>Browse through a selection of the projects I have worked on throughout my studies and collaborative work. These projects showcase a wide range of my skills, including full-stack web-apps, visualization tools  and story-based projects. Feel free to take a closer look at my full portfolio and check out any projects that catch your eye!</p>
       </Reveal>
       <Reveal>
         <a class="gradient-background main-btn home-project-btn" href="/portfolio">take a look</a>
@@ -88,6 +91,9 @@
   #home-intro-text {
     margin: 0;
     padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   #home-intro-btn {
@@ -173,6 +179,7 @@
 
     #home-intro-text {
       padding: 0;
+      font-size: 1.2em;
     }
 
     .home-project-content {
@@ -190,6 +197,7 @@
     #home-project-info {
       align-items: flex-end;
       gap: 1rem;
+      font-size: 1.1em;
     }
 
     #home-section-contact {

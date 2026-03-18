@@ -55,6 +55,7 @@
     padding: 0;
     height: 100%;
     top: 0;
+    cursor: pointer;
   }
   .embla__prev {
     left: 0;

@@ -41,6 +41,10 @@
     text-align: justify;
 }
 
+:global(.line-height) {
+    line-height: 150%;
+}
+
 :global(.heading-light) {
     font-weight: 400;
     font-style: italic;

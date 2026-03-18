@@ -71,6 +71,32 @@ export const projects: Project[] = [
     additionalImg: ["amity_screens2.png", "amity_logo.png", "amity_flyer.png", "amity_screens3.png", "amity_sticker.png", "amity_team.png"]
   },
   {
+    slug: "mobile-viz-onboarding",
+    name: "Mobile Viz Onboarding",
+    img: "",
+    img2: "",
+    url: "https://sankey-onboarding.netlify.app/",
+    duration: "Jan 2025 – Sept 2025",
+    technologies: [
+      { icon: "akar-icons:angular-fill", name: "Angular" },
+      { icon: "devicon-plain:angularmaterial", name: "Angular Material" },
+      { icon: "file-icons:d3", name: "D3.js" },
+      { icon: "solar:figma-linear", name: "Figma" }
+    ],
+    shortDescription: "In my master thesis I dealt with the topic of data visualization onboarding on mobile devices. Combining principles of mobile UI/UX with data visualization and onboarding/learning with the goal of finding suitable methods to support and encourage users in engaging with mobile visualizations.",
+    description: "<div></div>",
+    features: [
+      "Mobile Sankey diagram",
+      "Interactive data exploration",
+      "Onboarding in a mobile specific context",
+      "Enhancing visualization literacy",
+      "Immersive microlearning"
+    ],
+    implementation: "",
+    learnings: "",
+    additionalImg: []
+  },
+  {
     slug: "time-parabox",
     name: "Time Parabox",
     img: "time-parabox_compass.png",
@@ -102,30 +128,6 @@ export const projects: Project[] = [
     additionalImg: ["time-parabox_screens2.png", "time-parabox_flyer.png", "time-parabox_planning.png", "time-parabox_building.png", "time-parabox_storyline.png", "time-parabox_results.png"]
   },
   {
-    slug: "print-to-mobile",
-    name: "Bean to Cup",
-    img: "print-to-mobile_cappucino.png",
-    img2: "print-to-mobile_home.png",
-    url: "https://it231505-21822.php.fhstp.cc/",
-    duration: "Sep 23",
-    technologies: [
-      { icon: "akar-icons:angular-fill", name: "Angular" },
-      { icon: "", name: "Hammer.js" }
-    ],
-    shortDescription: "Bean to Cup is a mobile-only web app that connects coffee lovers with personalized brewing inspiration. By scanning a QR code on their purchased beans, users unlock tailored recipes that make every cup unique.",
-    description: "Bean to Cup was my first Master’s project and a explored how physical and digital media can complement each other. The goal was to create a mobile web app that provides personalized coffee recipes by scanning QR codes printed on coffee bean packages. Each scan leads to a curated page with brewing instructions tailored to the beans’ characteristics such as roast and aroma.\nThe concept emphasizes simplicity, design clarity, and usability. It targets a hip, quality-oriented audience that appreciates convenience without sacrificing individuality or craftsmanship.",
-    features: [
-      "Scan QR codes to access recipe pages",
-      "Display recipe suggestions for specific coffee beans",
-      "Browse through a categorized recipe list",
-      "Follow step-by-step brewing guidance",
-      "Use swipe gestures for smooth navigation"
-    ],
-    implementation: "The frontend was built in Angular with modular components for reusability and scalability. Hammer.js was used to implement intuitive swipe gestures, providing an app-like experience within the browser. The design was optimized for mobile screens with a focus on legibility and minimalism. This short but focused project was completed within a few days and served as an ideal introduction to full-cycle web development from ideation to delivery.",
-    learnings: "Bean to Cup taught me the fundamentals of component-based architecture and how to combine design and technology efficiently in short development cycles. I learned to use QR codes in combination with mobile apps and to design clean, mobile-first navigation. The project also sharpened my sense for minimal UI design and usability under real-world constraints.",
-    additionalImg: ["print-to-mobile_qrcode.png", "print-to-mobile_aeropress.png", "print-to-mobile_instructions.png"]
-  },
-  {
     slug: "smart-communities",
     name: "Smart Communities – IoT4LAC",
     img: "smart-communities.png",
@@ -150,6 +152,30 @@ export const projects: Project[] = [
     implementation: "Initial sketches with pen and paper were created, followed by low-fidelity and high-fidelity prototypes designed in Adobe XD to explore different layout and interaction strategies. The plugin was designed to blend seamlessly into the research project's existing plugins, maintaining stylistic and functional consistency.</div><div>I was responsible for the dashboard design, visualization logic, data binding, and interaction design, ensuring smooth user workflows. Multiple usability studies were conducted throughout the course of the project using task-based scenarios to evaluate the clarity and effectiveness of the design. Results were analyzed and presented in a structured evaluation report.</div>",
     learnings: "The project expanded my understanding of visualization, usability and user-centered research. I learned to design for clarity and accessibility while working within an existing framework. Conducting real user tests offered valuable insight into how people engage with data tools, and how small changes can significantly improve interpretability and user experience.",
     additionalImg: ["smart-communities_prototype2.png", "smart-communities_dashboard1.png", "smart-communities_dashboard2.png", "smart-communities_dashboard3.png"]
+  },
+  {
+    slug: "print-to-mobile",
+    name: "Bean to Cup",
+    img: "print-to-mobile_cappucino.png",
+    img2: "print-to-mobile_home.png",
+    url: "https://it231505-21822.php.fhstp.cc/",
+    duration: "Sep 23",
+    technologies: [
+      { icon: "akar-icons:angular-fill", name: "Angular" },
+      { icon: "", name: "Hammer.js" }
+    ],
+    shortDescription: "Bean to Cup is a mobile-only web app that connects coffee lovers with personalized brewing inspiration. By scanning a QR code on their purchased beans, users unlock tailored recipes that make every cup unique.",
+    description: "Bean to Cup was my first Master’s project and a explored how physical and digital media can complement each other. The goal was to create a mobile web app that provides personalized coffee recipes by scanning QR codes printed on coffee bean packages. Each scan leads to a curated page with brewing instructions tailored to the beans’ characteristics such as roast and aroma.\nThe concept emphasizes simplicity, design clarity, and usability. It targets a hip, quality-oriented audience that appreciates convenience without sacrificing individuality or craftsmanship.",
+    features: [
+      "Scan QR codes to access recipe pages",
+      "Display recipe suggestions for specific coffee beans",
+      "Browse through a categorized recipe list",
+      "Follow step-by-step brewing guidance",
+      "Use swipe gestures for smooth navigation"
+    ],
+    implementation: "The frontend was built in Angular with modular components for reusability and scalability. Hammer.js was used to implement intuitive swipe gestures, providing an app-like experience within the browser. The design was optimized for mobile screens with a focus on legibility and minimalism. This short but focused project was completed within a few days and served as an ideal introduction to full-cycle web development from ideation to delivery.",
+    learnings: "Bean to Cup taught me the fundamentals of component-based architecture and how to combine design and technology efficiently in short development cycles. I learned to use QR codes in combination with mobile apps and to design clean, mobile-first navigation. The project also sharpened my sense for minimal UI design and usability under real-world constraints.",
+    additionalImg: ["print-to-mobile_qrcode.png", "print-to-mobile_aeropress.png", "print-to-mobile_instructions.png"]
   },
   {
     slug: "echo-chamber",

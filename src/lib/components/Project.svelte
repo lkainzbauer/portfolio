@@ -22,7 +22,7 @@
                 <h2>{project.name}</h2>
             </Reveal>
             <Reveal>
-            <div class="project-listing-description">
+            <div class="project-listing-description line-height">
                 {project.shortDescription}
             </div>
             </Reveal>
@@ -42,7 +42,7 @@
             <Reveal>
                 <div class="project-listing-text" class:gradient-outline={!$isMobile}>
                     <h2>{project.name}</h2>
-                    <div class="project-listing-description">
+                    <div class="project-listing-description line-height">
                         {project.shortDescription}
                     </div>
                     <div class="project-listing-technologies">

@@ -12,7 +12,7 @@
 
 <div id="portfolio-placeholder">
     <Reveal>
-    <div class="portfolio-section gradient-outline" id="portfolio-intro">
+    <div class="portfolio-section gradient-outline linbe-height" id="portfolio-intro">
         <div>Across my studies and collaborative work, I have developed a diverse range of projects that combine solid backend architecture, intuitive frontend design and user-centered thinking.</div>
         <div>Below is a selection of projects that best illustrate my range. From developing full-stack applications in Angular, Vue, and NestJS to creating sensor-based games, data visualization tools, and interactive storytelling environments.</div>
     </div>
@@ -61,6 +61,7 @@
         #portfolio-intro {
             width: 50%;
             margin: 10rem auto 0;
+            font-size: 1.1em;
         }
     }
 
