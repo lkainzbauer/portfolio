@@ -179,7 +179,6 @@
 
     #home-intro-text {
       padding: 0;
-      font-size: 1.2em;
     }
 
     .home-project-content {
@@ -197,7 +196,6 @@
     #home-project-info {
       align-items: flex-end;
       gap: 1rem;
-      font-size: 1.1em;
     }
 
     #home-section-contact {
