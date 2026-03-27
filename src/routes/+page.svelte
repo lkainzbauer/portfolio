@@ -9,22 +9,30 @@
 
 <div id="home-heading">
   <Reveal>
-  <h1>Welcome</h1>
+  <h1><span class="heading-light">Hi, I'm</span> Laura!</h1>
   </Reveal>
   <Reveal>
   <p class="greeting">Get to know me and my projects!</p>
   </Reveal>
 </div>
 
-<Reveal>
-<div class="home-section gradient-outline gradient-outline-btn" id="home-intro">
-  <p id="home-intro-text" class="line-height">
-    <span>My name is Laura and I am a web developer, UI/UX designer and data visualization specialist!</span>
-    <span>I enjoy developing websites and apps that are intuitive to use and fun to interact with. My workflow ranges from identifying user needs to creating prototypes, implementing designs, and finally testing and evaluating the results.</span>
-  </p>
-  <a class="gradient-background main-btn" id="home-intro-btn" href="/about-me">about me</a>
+<div id="home-intro-container">
+  <Reveal>
+  <div class="home-section gradient-outline gradient-outline-btn" id="home-intro">
+    <p id="home-intro-text" class="line-height">
+      I combine <span class="highlight">design</span> and <span class="highlight">code</span> to create <span class="highlight">intuitive</span> and <span class="highlight">user-centered</span> digital experiences!
+    </p>
+    <a class="gradient-background main-btn" id="home-intro-btn" href="/about-me">about me</a>
+  </div>
+  </Reveal>
+  {#if $isMobile}
+        <div id="hero"></div>
+  {:else}
+      <Reveal>
+          <div id="hero"></div>
+      </Reveal>
+  {/if}
 </div>
-</Reveal>
 
 
 <div class="home-section" id="home-project">
@@ -79,7 +87,13 @@
 
   #home-heading {
     color: $bg;
-    margin-bottom: 6rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  #home-intro-container {
+    display: flex;
+    flex-direction: column-reverse;
     width: 100%;
   }
 
@@ -91,9 +105,17 @@
   #home-intro-text {
     margin: 0;
     padding-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    font-family: $heading-text;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-transform: none;
+    font-style: italic;
+
+    .highlight {
+      font-weight: bold;
+      font-style: normal;
+      text-transform: uppercase;
+    }
   }
 
   #home-intro-btn {
@@ -105,6 +127,35 @@
   .greeting {
     font-size: 1.2em;
     margin: 0;
+  }
+
+  #hero {
+    background: url("/img/laura-kainzbauer.png") center/cover no-repeat;
+    height: 80vh;
+    width: 100vw;
+    max-width: 120%;
+    margin-bottom: 2rem;
+    margin-left: -2rem;
+
+    // fade lengths
+    --top-fade: 0;
+    --bottom-fade: 200px;
+
+    // gradient into background
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0,
+        #000 var(--top-fade),
+        #000 calc(100% - var(--bottom-fade)),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0,
+        #000 var(--top-fade),
+        #000 calc(100% - var(--bottom-fade)),
+        transparent 100%
+    );
   }
 
   .home-section {
@@ -169,17 +220,55 @@
       margin: 2rem 0 8rem 0;
     }
 
+    #home-intro-container {
+      display: flex;
+      flex-direction: row;
+      width: 80%;
+      justify-content: space-between;
+    }
+
     #home-intro {
-      width: 40rem;
+      width: 22.28rem;
+      margin-top: 0;
     }
 
     .greeting {
       font-size: 1.7em;
     }
 
+    #hero {
+      max-width: none;
+      width: 25rem;
+      height: 40rem;
+      margin-top: -27rem;
+
+      // fade lengths
+      --top-fade: 0px;
+      --right-fade: 120px;
+
+      -webkit-mask-image: 
+      linear-gradient(to bottom,
+          transparent 0,
+          #000 var(--top-fade),
+          #000 calc(100% - var(--bottom-fade)),
+          transparent 100%
+      );
+      -webkit-mask-composite: destination-in;
+      mask-composite: intersect;
+
+      mask-image: 
+      linear-gradient(to bottom,
+          transparent 0,
+          #000 var(--top-fade),
+          #000 calc(100% - var(--bottom-fade)),
+          transparent 100%
+      );
+      mask-composite: intersect;
+    }
+
     #home-intro-text {
       padding: 0;
-      font-size: 1.1em;
+      font-size: 1.6em;
     }
 
     .home-project-content {

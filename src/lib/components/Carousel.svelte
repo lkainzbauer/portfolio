@@ -37,7 +37,7 @@
 
   .embla {
     position: relative;
-    width: calc(100vw - 2rem);
+    width: calc(100vw - 4rem);
   }
 
   .embla__viewport {

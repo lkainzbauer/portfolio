@@ -13,10 +13,10 @@
 
 <div id="about-me-top">
     {#if $isMobile}
-        <div id="hero"></div>
+        <div id="hero-about-me"></div>
     {:else}
         <Reveal>
-            <div id="hero"></div>
+            <div id="hero-about-me"></div>
         </Reveal>
     {/if}
 
@@ -26,12 +26,15 @@
         </div>
     {/if}
 
-    <div class="about-me-section" id="about-me-intro">
+    <div class="about-me-section" id="about-me-intro" class:gradient-outline={$isMobile}>
         <Reveal>
         <h2 class="heading-underlined"><span class="heading-light">Hi</span> there</h2>
         </Reveal>
         <Reveal>
-        <p>Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+        <p id="about-me-text" class="line-height">
+            <span>My name is Laura and I am a web developer, UI/UX designer and data visualization specialist!</span>
+            <span>I enjoy developing websites and apps that are intuitive to use and fun to interact with. My workflow ranges from identifying user needs to creating prototypes, implementing designs, and finally testing and evaluating the results.</span>
+        </p>
         </Reveal>
     </div>
 </div>
@@ -41,7 +44,9 @@
     <h2 class="outline-heading"><span class="heading-light">My</span> skills</h2>
     </Reveal>
     <Reveal>
-    <p class="gradient-outline">Lorem ipsum dolor sit amet consectetur. Gravida cursus purus eget tincidunt etiam urna. A eget vitae non est quis. Nibh at pellentesque in faucibus. In etiam gravida suspendisse at phasellus auctor enim faucibus accumsan. Mattis justo lectus interdum vivamus arcu sed et vehicula enim. Volutpat.</p>
+    <p id="about-me-skills-text" class="gradient-outline line-height">
+        <span>My professional expertise ranges from design and HCI to visualization and development. In my work, I always strive to expand my knowledge and skills as much as possible, and I enjoy enhancing my skill set with new aspects. In addition, I thrive in a team environment and find joy in developing new solutions to problems together. I believe that communication and collaboration are key aspects of creative work.</span>
+    </p>
     </Reveal>
 </div>
 
@@ -109,12 +114,25 @@
         width: 100%;
     }
 
+    #about-me-top {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
     #about-me-intro {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: calc(100% - 4rem);
-        margin: 0 2rem;
+        width: calc(100% - 2rem);
+        margin-top: 4rem;
+    }
+
+    #about-me-text, #about-me-skills-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 0;
     }
 
     #about-me-coding-languages {
@@ -193,12 +211,13 @@
         margin: 1rem 0;
     }
 
-    #hero {
-        background: url("/img/laura-kainzbauer.jpg") center/cover no-repeat #000;
+    #hero-about-me {
+        background: url("/img/laura-kainzbauer2.png") center/cover no-repeat #0f0f0f;
         height: 80vh;
         width: 100vw;
         max-width: 120%;
         margin-bottom: 2rem;
+        margin-left: -2rem;
 
         // fade lengths
         --top-fade: 140px;
@@ -225,6 +244,7 @@
 
         #about-me-top {
             display: flex;
+            flex-direction: row;
             margin-top: 12rem;
             margin-bottom: 4rem;
             gap: 3rem;
@@ -236,7 +256,11 @@
             margin-bottom: 2rem;
         }
 
-        #hero {
+        #about-me-text {
+            font-size: 1.1em;
+        }
+
+        #hero-about-me {
             max-width: none;
             width: 25rem;
             height: 40rem;
