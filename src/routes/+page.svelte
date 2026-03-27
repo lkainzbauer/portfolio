@@ -9,7 +9,7 @@
 
 <div id="home-heading">
   <Reveal>
-  <h1><span class="heading-light">Hi, I'm</span> Laura!</h1>
+  <h1><span class="heading-light">Hi, I'm</span> Laura</h1>
   </Reveal>
   <Reveal>
   <p class="greeting">Get to know me and my projects!</p>
