@@ -70,7 +70,7 @@ export const projects: Project[] = [
     learnings: "Amity allowed me to refine my approach to building cohesive full-stack systems where design and functionality go hand in hand. I learned to anticipate user needs, build reliable authentication flows, and design for accessibility. The project also emphasized communication and teaching. Our small team frequently exchanged knowledge and supported each other in mastering new tools. The experience strengthened both my technical expertise and my collaborative mindset.",
     additionalImg: ["amity_screens2.png", "amity_logo.png", "amity_flyer.png", "amity_screens3.png", "amity_sticker.png", "amity_team.png"]
   },
-  {
+  /*{
     slug: "mobile-viz-onboarding",
     name: "Mobile Viz Onboarding",
     img: "",
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     implementation: "",
     learnings: "",
     additionalImg: []
-  },
+  },*/
   {
     slug: "time-parabox",
     name: "Time Parabox",

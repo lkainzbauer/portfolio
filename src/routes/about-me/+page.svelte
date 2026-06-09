@@ -212,7 +212,7 @@
     }
 
     #hero-about-me {
-        background: url("/img/laura-kainzbauer2.png") center/cover no-repeat #0f0f0f;
+        background: url("/img/laura-kainzbauer3.png") center/cover no-repeat #0f0f0f;
         height: 80vh;
         width: 100vw;
         max-width: 120%;
