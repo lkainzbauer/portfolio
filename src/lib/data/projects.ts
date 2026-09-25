@@ -73,7 +73,7 @@ export const projects: Project[] = [
   {
     slug: "mobile-viz-onboarding",
     name: "Mobile Viz Onboarding",
-    img: "mobile-viz-onboarding_detail.png",
+    img: "mobile-viz-onboarding_start.png",
     img2: "mobile-viz-onboarding_screens.png",
     url: "https://sankey-onboarding.netlify.app/",
     duration: "Jan 2025 – Sept 2025",
@@ -97,12 +97,7 @@ export const projects: Project[] = [
     ],
     implementation: "<div>The prototype was developed as a mobile-first web application using Angular and D3.js. D3.js was used to create the Sankey diagram and handle its interactive behavior, while Angular provided the application structure and component architecture. The interface was designed in Figma with a strong focus on small-screen layouts, touch interaction, readability, and reducing cognitive load during the onboarding process.</div><div>A central part of the implementation was the integration of onboarding and visualization interaction. Rather than separating learning content from the visualization, the prototype uses guided interactions, highlights, explanations, and small tasks to introduce users to individual aspects of the Sankey diagram. The onboarding was designed around the idea of immersive microlearning, allowing users to learn by interacting with the visualization instead of passively reading instructions.</div><div>The prototype was developed iteratively, with the design and interaction concepts refined based on the requirements of the research question and findings from different stages of evaluation.</div>",
     learnings: "The project deepened my understanding of data visualization, mobile interaction design, and user-centered research. I learned how strongly screen size, touch interaction, and limited attention can influence the design of visualization interfaces. Designing the onboarding also showed me the importance of introducing complex concepts gradually and using interaction itself as part of the learning process. Beyond the technical implementation with Angular and D3.js, the thesis strengthened my skills in research, prototyping, evaluation, and translating theoretical findings into an interactive prototype.",
-    additionalImg: [
-      "mobile-viz-onboarding_screens2.png",
-      "mobile-viz-onboarding_onboarding.png",
-      "mobile-viz-onboarding_sankey.png",
-      "mobile-viz-onboarding_figma.png"
-    ]
+    additionalImg: ["mobile-viz-onboarding_screens2.png", "mobile-viz-onboarding_screens3.png", "mobile-viz-onboarding_hint.png"]
   },
   {
     slug: "time-parabox",
