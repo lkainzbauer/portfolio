@@ -103,7 +103,7 @@ export const projects: Project[] = [
       "mobile-viz-onboarding_sankey.png",
       "mobile-viz-onboarding_figma.png"
     ]
-  }
+  },
   {
     slug: "time-parabox",
     name: "Time Parabox",
