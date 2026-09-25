@@ -70,11 +70,11 @@ export const projects: Project[] = [
     learnings: "Amity allowed me to refine my approach to building cohesive full-stack systems where design and functionality go hand in hand. I learned to anticipate user needs, build reliable authentication flows, and design for accessibility. The project also emphasized communication and teaching. Our small team frequently exchanged knowledge and supported each other in mastering new tools. The experience strengthened both my technical expertise and my collaborative mindset.",
     additionalImg: ["amity_screens2.png", "amity_logo.png", "amity_flyer.png", "amity_screens3.png", "amity_sticker.png", "amity_team.png"]
   },
-  /*{
+  {
     slug: "mobile-viz-onboarding",
     name: "Mobile Viz Onboarding",
-    img: "",
-    img2: "",
+    img: "mobile-viz-onboarding_detail.png",
+    img2: "mobile-viz-onboarding_screens.png",
     url: "https://sankey-onboarding.netlify.app/",
     duration: "Jan 2025 – Sept 2025",
     technologies: [
@@ -83,19 +83,27 @@ export const projects: Project[] = [
       { icon: "file-icons:d3", name: "D3.js" },
       { icon: "solar:figma-linear", name: "Figma" }
     ],
-    shortDescription: "In my master thesis I dealt with the topic of data visualization onboarding on mobile devices. Combining principles of mobile UI/UX with data visualization and onboarding/learning with the goal of finding suitable methods to support and encourage users in engaging with mobile visualizations.",
-    description: "<div></div>",
+    shortDescription: "In my master thesis I explored data visualization onboarding on mobile devices. The project combines principles of mobile UI/UX, data visualization, and onboarding to investigate how interactive learning methods can support and encourage users when engaging with mobile visualizations.",
+    description: "<div>Mobile Viz Onboarding was developed as part of my master thesis and explores how users can be introduced to complex data visualizations on small screens. While data visualizations can provide powerful ways to understand information, their interactive nature can also make them difficult to approach, especially on mobile devices where screen space and interaction possibilities are limited.</div><div>The project focused on designing an onboarding experience for a mobile Sankey diagram. Instead of relying solely on static explanations, the concept combines guided interaction with short learning elements to gradually introduce users to the visualization and its underlying concepts. The goal was to make the first interaction feel approachable while encouraging users to actively explore and learn through the visualization itself.</div>",
     features: [
-      "Mobile Sankey diagram",
+      "Interactive mobile Sankey diagram",
+      "Guided onboarding for first-time users",
+      "Step-by-step introduction to visualization concepts",
       "Interactive data exploration",
-      "Onboarding in a mobile specific context",
-      "Enhancing visualization literacy",
-      "Immersive microlearning"
+      "Contextual explanations and visual cues",
+      "Mobile-specific interaction patterns",
+      "Microlearning elements integrated into the visualization",
+      "Support for developing visualization literacy"
     ],
-    implementation: "",
-    learnings: "",
-    additionalImg: []
-  },*/
+    implementation: "<div>The prototype was developed as a mobile-first web application using Angular and D3.js. D3.js was used to create the Sankey diagram and handle its interactive behavior, while Angular provided the application structure and component architecture. The interface was designed in Figma with a strong focus on small-screen layouts, touch interaction, readability, and reducing cognitive load during the onboarding process.</div><div>A central part of the implementation was the integration of onboarding and visualization interaction. Rather than separating learning content from the visualization, the prototype uses guided interactions, highlights, explanations, and small tasks to introduce users to individual aspects of the Sankey diagram. The onboarding was designed around the idea of immersive microlearning, allowing users to learn by interacting with the visualization instead of passively reading instructions.</div><div>The prototype was developed iteratively, with the design and interaction concepts refined based on the requirements of the research question and findings from different stages of evaluation.</div>",
+    learnings: "The project deepened my understanding of data visualization, mobile interaction design, and user-centered research. I learned how strongly screen size, touch interaction, and limited attention can influence the design of visualization interfaces. Designing the onboarding also showed me the importance of introducing complex concepts gradually and using interaction itself as part of the learning process. Beyond the technical implementation with Angular and D3.js, the thesis strengthened my skills in research, prototyping, evaluation, and translating theoretical findings into an interactive prototype.",
+    additionalImg: [
+      "mobile-viz-onboarding_screens2.png",
+      "mobile-viz-onboarding_onboarding.png",
+      "mobile-viz-onboarding_sankey.png",
+      "mobile-viz-onboarding_figma.png"
+    ]
+  }
   {
     slug: "time-parabox",
     name: "Time Parabox",
